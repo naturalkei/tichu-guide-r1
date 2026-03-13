@@ -1,36 +1,36 @@
 # Tichu Guide R1 - Development Roadmap
 
-티츄 가이드 사이트 개발을 위한 단계별 로드맵 및 이슈 계획입니다.
+Step-by-step roadmap and issue plan for the development of the Tichu guide site.
 
-## Phase 1: Infrastructure & Core Setup (인프라 및 핵심 설정)
-- [ ] **Issue #1:** SPA 개발 환경 초기화 및 CI/CD 워크플로우 구성
-  - Solid JS, Vite, Tailwind CSS 설정
-  - GitHub Actions를 통한 GitHub Pages 자동 배포 (release 브랜치 PR 시)
-- [ ] **Issue #2:** 기본 레이아웃 및 내비게이션 구현
-  - 모바일 우선 반응형 레이아웃
-  - 하단 탭 바 또는 사이드 메뉴 (Quick Navigation)
+## Phase 1: Infrastructure & Core Setup
+- [x] **Issue #1:** Initialize SPA development environment and configure CI/CD workflow
+  - Solid JS, Vite, Tailwind CSS settings
+  - Automatic GitHub Pages deployment via GitHub Actions (on PR to release branch)
+- [x] **Issue #2:** Implement base layout and navigation
+  - Mobile-first responsive layout
+  - Bottom tab bar or side menu (Quick Navigation)
 
-## Phase 2: Content Implementation (콘텐츠 구현)
-- [ ] **Issue #3:** 티츄 게임 준비 및 기본 규칙 페이지 작성
-  - 카드 구성 (참새, 봉, 개, 용 등 특수 카드 포함)
-  - 초기 세팅 및 카드 분배 방식
-- [ ] **Issue #4:** 족보 및 상세 규칙 페이지 작성
-  - 싱글, 페어, 연속 페어, 트리플, 풀하우스, 스트레이트
-  - 티츄 선언 (그랜드 티츄, 스몰 티츄) 및 폭탄 규칙
-- [ ] **Issue #5:** 점수 계산 및 팁 페이지 작성
-  - 카드별 점수 (5, 10, K 등) 및 보너스 점수 계산법
-  - 실전 점수 계산 팁 UI 구성
+## Phase 2: Content Implementation
+- [x] **Issue #3:** Draft Tichu game preparation and basic rules page
+  - Card composition (including special cards: Sparrow, Phoenix, Dog, Dragon)
+  - Initial setup and card distribution methods
+- [x] **Issue #4:** Draft hands (pedigree) and detailed rules page
+  - Singles, Pairs, Consecutive Pairs, Triples, Full House, Straights
+  - Tichu declarations (Grand Tichu, Small Tichu) and Bomb rules
+- [x] **Issue #5:** Draft score calculation and tips page
+  - Score per card (5, 10, K, etc.) and bonus point calculation
+  - Score calculation tip UI structure
 
-## Phase 3: UI/UX Enhancement (UI/UX 고도화)
-- [ ] **Issue #6:** 모바일 최적화 및 인터랙션 강화
-  - Framer Motion (또는 Solid equivalent)을 활용한 매끄러운 전환 효과
-  - 다크 모드 지원 및 가독성 개선
-- [ ] **Issue #7:** 에티켓 및 주의사항 안내 섹션 추가
-  - 게임 진행간 매너 및 흔한 실수 방지 가이드
+## Phase 3: UI/UX Enhancement
+- [x] **Issue #6:** Mobile optimization and interaction reinforcement
+  - Smooth transition effects using Framer Motion (or Solid equivalent)
+  - Dark mode support and readability improvement
+- [x] **Issue #7:** Add etiquette and precaution guide section
+  - Manner guide and common mistake prevention during gameplay
 
-## Phase 4: Finalization & Launch (마무리 및 런칭)
-- [ ] **Issue #8:** 최종 QA 및 성능 최적화
-  - Lighthouse 점수 최적화 (SEO, 접근성)
-  - 라이선스 및 Disclaimer 최종 확인
-- [ ] **Issue #9:** 배포 자동화 및 메인 브랜치 병합
-  - main -> release PR 생성 및 자동 배포 확인
+## Phase 4: Finalization & Launch
+- [x] **Issue #8:** Final QA and performance optimization
+  - Lighthouse score optimization (SEO, Accessibility)
+  - Final verification of license and Disclaimer
+- [x] **Issue #9:** Deployment automation and main branch merge
+  - Create main -> release PR and verify automatic deployment
