@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.2...tichu-guide-r1-v0.2.3) (2026-03-13)
+
+
+### Bug Fixes
+
+* diagnostic logging and robust nested routing for i18n ([7be24d1](https://github.com/naturalkei/tichu-guide-r1/commit/7be24d12c1fcbcd16aca2785617e3da29577874f))
+
 ## [0.2.2](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.1...tichu-guide-r1-v0.2.2) (2026-03-13)
 
 
