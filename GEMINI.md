@@ -21,6 +21,7 @@
 
 ### 3. 개발 워크플로우
 - **브랜치 전략:** 모든 개별 작업 및 지시사항은 독립적인 피처 브랜치(feature branches)에서 수행하며, 작업 완료 후 `main` 브랜치에 병합(Merge)합니다.
+- **배포 프로세스:** `release` 브랜치는 직접 병합하지 않으며, 반드시 `main` 브랜치에서 `release` 브랜치로 Pull Request를 생성하여 병합해야 합니다. 이 과정에서 자동 배포 및 버전 관리 파이프라인이 실행됩니다.
 - **커밋 메시지:** [Conventional Commits](https://www.conventionalcommits.org/) 규격에 맞춰 작성합니다. (예: `feat:`, `fix:`, `docs:`, `chore:`)
 
 ### 4. 주요 콘텐츠 구성
