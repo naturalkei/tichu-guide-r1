@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.3.1...tichu-guide-r1-v0.3.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* fixed score guide error ([d5ae26e](https://github.com/naturalkei/tichu-guide-r1/commit/d5ae26eed62e3194b071d49d5aa3731f0f1bc286))
+
 ## [0.3.1](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.3.0...tichu-guide-r1-v0.3.1) (2026-03-13)
 
 
