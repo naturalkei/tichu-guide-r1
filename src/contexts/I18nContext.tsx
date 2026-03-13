@@ -7,6 +7,7 @@ type I18nContextType = {
   locale: () => Locale
   setLocale: (locale: Locale) => void
   t: (key: string) => string
+  raw: (key: string) => unknown
 }
 
 const I18nContext = createContext<I18nContextType>()
@@ -15,16 +16,13 @@ const STORAGE_KEY = 'tichu-guide-lang'
 
 export const I18nProvider: ParentComponent = (props) => {
   const getInitialLocale = (): Locale => {
-    // 1. Check URL path
     const pathParts = window.location.pathname.split('/').filter(Boolean)
     const urlLang = pathParts.find(part => dict[part as Locale]) as Locale
     if (urlLang) return urlLang
 
-    // 2. Check localStorage
     const saved = localStorage.getItem(STORAGE_KEY) as Locale
     if (saved && dict[saved]) return saved
 
-    // 3. Check browser language
     const browserLang = navigator.language.split('-')[0] as Locale
     if (dict[browserLang]) return browserLang
 
@@ -33,7 +31,7 @@ export const I18nProvider: ParentComponent = (props) => {
 
   const [locale, _setLocale] = createSignal<Locale>(getInitialLocale())
 
-  const t = (key: string): string => {
+  const raw = (key: string): unknown => {
     const keys = key.split('.')
     let value: unknown = dict[locale()]
     for (const k of keys) {
@@ -44,6 +42,11 @@ export const I18nProvider: ParentComponent = (props) => {
         break
       }
     }
+    return value
+  }
+
+  const t = (key: string): string => {
+    const value = raw(key)
     return typeof value === 'string' ? value : key
   }
 
@@ -56,7 +59,8 @@ export const I18nProvider: ParentComponent = (props) => {
   const value: I18nContextType = {
     locale,
     setLocale,
-    t
+    t,
+    raw
   }
 
   return (

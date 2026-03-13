@@ -4,10 +4,10 @@ import Layout from '../components/Layout'
 import { useI18n } from '../contexts/I18nContext'
 
 const Tips: Component = () => {
-  const { t } = useI18n()
+  const { t, raw } = useI18n()
 
-  const etiquettes = () => t('tips.etiquette_items') as unknown as { title: string; desc: string }[]
-  const dosAndDonts = () => t('tips.dos_donts_items') as unknown as { type: 'do' | 'dont'; title: string; desc: string }[]
+  const etiquettes = () => (raw('tips.etiquette_items') || []) as { title: string; desc: string }[]
+  const dosAndDonts = () => (raw('tips.dos_donts_items') || []) as { type: 'do' | 'dont'; title: string; desc: string }[]
 
   return (
     <Layout>
