@@ -1,13 +1,14 @@
+name: release-please
+
 on:
   push:
     branches:
-      - main
+      - release
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
-
-name: release-please
 
 jobs:
   release-please:
@@ -18,3 +19,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+          target-branch: main

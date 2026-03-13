@@ -1,4 +1,5 @@
 {
+  "primary-branch": "release",
   "packages": {
     ".": {
       "release-type": "node",
