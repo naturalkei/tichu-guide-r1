@@ -1,5 +1,6 @@
-import { createSignal, For } from 'solid-js'
+import { For, createSignal } from 'solid-js'
 import type { Component } from 'solid-js'
+
 import Layout from '../components/Layout'
 import { useI18n } from '../contexts/I18nContext'
 
@@ -13,7 +14,7 @@ const Score: Component = () => {
     { card: '10', points: '+10' },
     { card: 'K', points: '+10' },
     { card: t('rules.special.dragon'), points: '+25' },
-    { card: t('rules.special.mahjong'), points: '-25' },
+    { card: t('rules.special.phoenix'), points: '-25' },
   ]
 
   return (
