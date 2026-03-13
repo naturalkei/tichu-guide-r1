@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.4...tichu-guide-r1-v0.2.5) (2026-03-13)
+
+
+### Bug Fixes
+
+* resolve lint error in Layout component ([6c48dd9](https://github.com/naturalkei/tichu-guide-r1/commit/6c48dd99f9aef254d6215e99c2f2e52ad49551ea))
+* robust SPA routing and precise language prefix replacement ([55b0b01](https://github.com/naturalkei/tichu-guide-r1/commit/55b0b014aec7b626c34b5694a6d60aa0fc0e71a0))
+
 ## [0.2.4](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.3...tichu-guide-r1-v0.2.4) (2026-03-13)
 
 
