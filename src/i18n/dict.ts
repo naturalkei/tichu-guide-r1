@@ -104,7 +104,7 @@ export const dict = {
   },
   en: {
     title: 'Tichu Guide',
-    subtitle: 'All rules and tips for Tichu board game, cleanly and simply',
+    subtitle: 'All rules and tips for Tichu board game',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: 'Home',
@@ -207,7 +207,7 @@ export const dict = {
   },
   ja: {
     title: 'Tichu Guide',
-    subtitle: 'スッキリ確認できるティチュの全ルールとチップ',
+    subtitle: 'ティチュの全ルールとチップ',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: '홈',
@@ -237,7 +237,7 @@ export const dict = {
         step1: '4人のプレイヤーが2人ずつチームを組みます。(チームメイトは向かい合って座ります)',
         step2: '全56枚のカードを1枚ずつ配ります。(各自14枚)',
         step3: 'グランドティチュ：最初の8枚を受け取った時点で宣言可能。',
-        step4: '카드 교환: 味方に1枚, 相手2人に各1枚, 計3枚を同時に交換します。'
+        step4: '카드 교환: 味方に1枚, 相手2人に各1枚, 計3枚를 동시에 교환합니다.'
       },
       cards: {
         title: 'カード構成',
@@ -283,8 +283,8 @@ export const dict = {
       special_bonus: '特殊ボーナス',
       one_two: 'ワンツー (1-2位独占)',
       one_two_desc: '同じチームが1位と2位を独占した場合, 点数計算なしで即座に200点獲得。',
-      tichu_bonus: 'スモール / グランドティチュ',
-      tichu_bonus_desc: '成功: +100 / +200点。失敗: 同等の減点。',
+      tichu_bonus: '스몰 / 그랜드티츄',
+      tichu_bonus_desc: '成功: +100 / +200点。失敗: 同等の減점.',
       calculator: 'クイック計算機',
       team_a: '自チーム',
       team_b: '相手チーム',
@@ -292,25 +292,25 @@ export const dict = {
     },
     tips: {
       title: 'マナー＆チップ',
-      hero_title: 'ティチュは紳士的なゲームです',
+      hero_title: '티츄는 신사적인 게임입니다',
       hero_desc: '他のプレイヤーへの配慮がゲームをより楽しくします。',
       etiquette: '進行マナー',
       etiquette_items: [
-        { title: 'カード交換のマナー', desc: '全員がカードを伏せるまで待ってから, 同時に確認します。' },
-        { title: '遅延の防止', desc: '自分の番が来る前に出すカードを考えておき, スムーズな進行を助けます。' },
-        { title: 'コミュニケーション', desc: '手札に関する直接的な情報の共有は禁止されています。' }
+        { title: '카드 교환의 매너', desc: '전원이 카드를 엎을 때까지 기다린 후, 동시에 확인합니다.' },
+        { title: '지연 방지', desc: '자신의 차례가 오기 전에 낼 카드를 생각하여 원활한 진행을 돕습니다.' },
+        { title: '커뮤니케이션', desc: '손패에 관한 직접적인 정보 공유는 금지되어 있습니다.' }
       ],
       dos_donts: "Do's & Don'ts",
       dos_donts_items: [
-        { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら, 自分が上がるより味方の1位を助けるプレイをしましょう。' },
-        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュを宣言するのはマナー違反です。' }
+        { type: 'do', title: '맛의 티츄를 응원', desc: '味方がティチュを宣言したら, 自分が上がるより味方の1位を助けるプレイをしましょう。' },
+        { type: 'dont', title: '너무 늦은 티츄 선언', desc: '既にカードが出された後にティチュを宣言するのはマナー違反입니다.' }
       ],
       footer_quote: '「勝敗よりも大切なのは, 楽しいゲームを作る態度です」'
     }
   },
   zh: {
     title: 'Tichu Guide',
-    subtitle: '清晰查看提储桌游的所有规则和技巧',
+    subtitle: '提储桌游的所有规则和技巧',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: '首页',
@@ -346,7 +346,7 @@ export const dict = {
         title: '卡牌构成',
         normal: '普通牌 (52张)',
         normal_desc: '4种花色，每种从2到A各13张',
-        special: '特殊牌 (4张)',
+        special: '特殊牌 (4장)',
         special_desc: '雀(1), 凤, 狗, 龙'
       },
       hands: {
@@ -356,15 +356,15 @@ export const dict = {
         pair: '对子',
         pair_desc: '2张数字相同的牌',
         consecutive_pair: '连对',
-        consecutive_pair_desc: '2个或更多连续数字的对子',
+        consecutive_pair_desc: '2个 or 更多连续数字的对子',
         triple: '三张',
         triple_desc: '3张数字相同的牌',
         full_house: '葫芦',
         full_house_desc: '三张 + 对子',
         straight: '顺子',
-        straight_desc: '5张或更多连续数字的牌',
+        straight_desc: '5张 or 更多连续数字的牌',
         bomb: '炸弹 (Bomb)',
-        bomb_desc: '4张同号或5张以上同花顺。可以在任何时候打出！'
+        bomb_desc: '4张同号 or 5张以上同花顺. 可以在任何时候打出!'
       },
       special: {
         title: '特殊牌详情',
@@ -375,7 +375,7 @@ export const dict = {
         phoenix: '凤 (Phoenix)',
         phoenix_desc: '百搭牌。可以代替除炸弹外的任何数字。',
         dog: '狗 (Dog)',
-        dog_desc: '在自己的回合打出，将出牌权交给队友。'
+        dog_desc: '在自己的回合打出, 将出牌权交给队友。'
       }
     },
     score: {
