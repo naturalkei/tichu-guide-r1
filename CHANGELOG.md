@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.2](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.1...tichu-guide-r1-v0.2.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* correct gh pr list flag and fields in auto-merge workflow ([1a5a57b](https://github.com/naturalkei/tichu-guide-r1/commit/1a5a57bbdc1c5a1f82e9b783a481a23dcab52351))
+* provide repository context to gh cli in auto-merge workflow ([4eb6e60](https://github.com/naturalkei/tichu-guide-r1/commit/4eb6e6098cf809c9f68a0759b94414418f2bdc92))
+* resolve rendering error in Tips page by adding raw translation support ([db347f6](https://github.com/naturalkei/tichu-guide-r1/commit/db347f681172870271226d36cb9b3f375237bb15))
+
 ## [0.2.1](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.0...tichu-guide-r1-v0.2.1) (2026-03-13)
 
 
