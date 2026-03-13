@@ -34,6 +34,12 @@ While Tichu rulebooks are easily found on the internet, this project was started
 
 ---
 
+## 🌐 Deployment
+
+When changes from the `main` branch are PRed and merged into the `release` branch, it is automatically deployed to GitHub Pages via GitHub Actions.
+
+---
+
 ## 🤝 Contribution Guide
 
 This project is open-source, and anyone can contribute.
@@ -61,9 +67,3 @@ This project is distributed under the **MIT License**. Free modification and dis
 
 ### Disclaimer
 This project is not an official guide for the Tichu game; it is an unofficial open-source project created by fans. All game rules and copyrights belong to the respective original authors.
-
----
-
-## 🌐 Deployment
-
-When changes from the `main` branch are PRed and merged into the `release` branch, it is automatically deployed to GitHub Pages via GitHub Actions.
