@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.0...tichu-guide-r1-v0.2.1) (2026-03-13)
+
+
+### Bug Fixes
+
+* resolve router primitive error and refine basepath redirection ([a217706](https://github.com/naturalkei/tichu-guide-r1/commit/a217706517732305afe3305aa1acc3130473894a))
+* robust SPA routing for GitHub Pages with language persistence ([1f49ba6](https://github.com/naturalkei/tichu-guide-r1/commit/1f49ba6507a2dae5a1d16c536348db5732b101aa))
+
 ## [0.2.0](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.1.0...tichu-guide-r1-v0.2.0) (2026-03-13)
 
 
