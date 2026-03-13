@@ -1,7 +1,7 @@
 import { For } from 'solid-js'
 import type { ParentComponent } from 'solid-js'
 import { Github } from 'lucide-solid'
-import { useNavigate, useLocation } from '@solidjs/router'
+import { useNavigate, useLocation, useParams } from '@solidjs/router'
 import BottomNav from './BottomNav'
 import { useI18n } from '../contexts/I18nContext'
 import type { Locale } from '../i18n/dict'
@@ -10,6 +10,7 @@ const Layout: ParentComponent = (props) => {
   const { t, locale } = useI18n()
   const navigate = useNavigate()
   const location = useLocation()
+  const params = useParams()
 
   const languages: { code: Locale; label: string }[] = [
     { code: 'en', label: '🇺🇸' },
@@ -19,21 +20,26 @@ const Layout: ParentComponent = (props) => {
   ]
 
   const changeLanguage = (code: Locale) => {
-    console.log('UI: Requesting language change to:', code)
-    // Navigate to the same sub-path but with a different language prefix
-    // location.pathname is relative to base
-    const currentPath = location.pathname.split('/').filter(Boolean)
+    // 1. Get the current path relative to base
+    let path = location.pathname // This is relative to base in Solid Router
     
-    // In our nested structure /:lang/..., the first part should be the locale
-    // But if we are at root redirecting, it might be empty.
-    if (currentPath.length > 0) {
-      currentPath[0] = code
+    // 2. The current language prefix from params
+    const currentLang = params.lang
+    
+    let target: string
+    if (currentLang) {
+      // Replace /en/... with /ko/...
+      // Use a more robust regex that handles potential trailing slashes
+      target = path.replace(new RegExp(`^/?${currentLang}`), `/${code}`)
     } else {
-      currentPath.push(code)
+      // Fallback if no lang param (shouldn't happen in nested routes)
+      target = `/${code}`
     }
+
+    // Failsafe: Ensure we don't have double slashes
+    target = '/' + target.split('/').filter(Boolean).join('/')
     
-    const target = '/' + currentPath.join('/')
-    console.log('UI: Navigating to:', target)
+    console.log('UI: Switching language to:', code, 'from path:', path, 'target:', target)
     navigate(target)
   }
 
