@@ -25,6 +25,18 @@
     <meta property="twitter:description" content="All rules and tips for Tichu board game, cleanly and simply. Mobile-optimized." />
     <meta property="twitter:image" content="https://naturalkei.github.io/tichu-guide-r1/og-image.svg" />
 
+    <!-- GitHub Pages SPA Hack -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&') 
+          }).join('?');
+          var base = l.pathname.replace(/\/$/, '');
+          window.history.replaceState(null, null, base + decoded + l.hash);
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,12 +1,15 @@
 import { For } from 'solid-js'
 import type { ParentComponent } from 'solid-js'
 import { Github } from 'lucide-solid'
+import { useNavigate, useLocation } from '@solidjs/router'
 import BottomNav from './BottomNav'
 import { useI18n } from '../contexts/I18nContext'
 import type { Locale } from '../i18n/dict'
 
 const Layout: ParentComponent = (props) => {
-  const { t, locale, setLocale } = useI18n()
+  const { t, locale } = useI18n()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const languages: { code: Locale; label: string }[] = [
     { code: 'en', label: '🇺🇸' },
@@ -14,6 +17,15 @@ const Layout: ParentComponent = (props) => {
     { code: 'ja', label: '🇯🇵' },
     { code: 'zh', label: '🇨🇳' }
   ]
+
+  const changeLanguage = (code: Locale) => {
+    // Navigate to the same sub-path but with a different language prefix
+    const currentPath = location.pathname.split('/').filter(Boolean)
+    // If the first part is a locale, replace it. Otherwise, unshift.
+    // In our nested structure, it should always be the first part.
+    currentPath[0] = code
+    navigate('/' + currentPath.join('/'))
+  }
 
   return (
     <div class="min-h-screen bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col pb-20">
@@ -23,7 +35,7 @@ const Layout: ParentComponent = (props) => {
           <For each={languages}>
             {(lang) => (
               <button
-                onClick={() => setLocale(lang.code)}
+                onClick={() => changeLanguage(lang.code)}
                 class={`w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xl ${
                   locale() === lang.code ? 'bg-zinc-100 dark:bg-zinc-800' : ''
                 }`}
@@ -55,7 +67,7 @@ const Layout: ParentComponent = (props) => {
             </a>
           </div>
           <p class="text-[10px] text-zinc-400">
-            © 2026 Tichu Guide R1. Fan-made open source project.
+            © 2026 Tichu Guide. Fan-made open source project.
           </p>
         </footer>
       </main>

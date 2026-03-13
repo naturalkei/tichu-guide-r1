@@ -14,17 +14,17 @@ const I18nContext = createContext<I18nContextType>()
 const STORAGE_KEY = 'tichu-guide-lang'
 
 export const I18nProvider: ParentComponent = (props) => {
-  // Robust detection: URL parts > localStorage > Browser Lang > 'en'
   const getInitialLocale = (): Locale => {
+    // 1. Check URL path
     const pathParts = window.location.pathname.split('/').filter(Boolean)
-    // Check if any part of the path matches a supported locale
     const urlLang = pathParts.find(part => dict[part as Locale]) as Locale
-    
     if (urlLang) return urlLang
 
+    // 2. Check localStorage
     const saved = localStorage.getItem(STORAGE_KEY) as Locale
     if (saved && dict[saved]) return saved
 
+    // 3. Check browser language
     const browserLang = navigator.language.split('-')[0] as Locale
     if (dict[browserLang]) return browserLang
 
@@ -51,26 +51,6 @@ export const I18nProvider: ParentComponent = (props) => {
     if (newLocale === locale()) return
     _setLocale(newLocale)
     localStorage.setItem(STORAGE_KEY, newLocale)
-    
-    // Update URL to reflect the new locale
-    const baseUrl = import.meta.env.BASE_URL // e.g. "/tichu-guide-r1/"
-    const currentPath = window.location.pathname
-    
-    // Construct new path: baseUrl + newLocale + (rest of path after old locale)
-    const pathWithoutBase = currentPath.startsWith(baseUrl) 
-      ? currentPath.substring(baseUrl.length) 
-      : currentPath.startsWith('/') ? currentPath.substring(1) : currentPath
-    
-    const parts = pathWithoutBase.split('/').filter(Boolean)
-    
-    if (parts.length > 0 && dict[parts[0] as Locale]) {
-      parts[0] = newLocale
-    } else {
-      parts.unshift(newLocale)
-    }
-    
-    const nextPath = (baseUrl.endsWith('/') ? baseUrl : baseUrl + '/') + parts.join('/')
-    window.history.pushState({}, '', nextPath)
   }
 
   const value: I18nContextType = {
