@@ -7,7 +7,7 @@ import Tips from './pages/Tips';
 
 const App: Component = () => {
   return (
-    <Router>
+    <Router base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <Route path="/" component={Home} />
       <Route path="/rules" component={Rules} />
       <Route path="/score" component={Score} />

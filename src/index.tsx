@@ -5,4 +5,9 @@ import App from './App.tsx'
 
 const root = document.getElementById('root')
 
-render(() => <App />, root!)
+if (!root) {
+  console.error('Root element not found')
+} else {
+  console.log('Mounting Solid JS application...')
+  render(() => <App />, root)
+}
