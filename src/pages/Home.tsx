@@ -1,5 +1,6 @@
 import type { Component } from 'solid-js';
 import { A } from "@solidjs/router";
+import { For } from 'solid-js';
 import Layout from '../components/Layout';
 import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-react';
 
@@ -22,26 +23,28 @@ const Home: Component = () => {
               티츄 보드게임의 모든 규칙과 팁
             </p>
           </div>
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
         </section>
 
         <section class="grid grid-cols-1 gap-4">
-          {menuItems.map((item) => (
-            <A href={item.path} class="group">
-              <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-zinc-100 dark:border-zinc-800 shadow-sm group-hover:shadow-md group-hover:border-indigo-200 dark:group-hover:border-indigo-900 transition-all flex items-center gap-4">
-                <div class={`${item.color} w-12 h-12 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-${item.color.split('-')[1]}-100 dark:shadow-none`}>
-                  <item.icon size={24} />
+          <For each={menuItems}>
+            {(item) => (
+              <A href={item.path} class="group">
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-zinc-100 dark:border-zinc-800 shadow-sm group-hover:shadow-md group-hover:border-indigo-200 dark:group-hover:border-indigo-900 transition-all flex items-center gap-4">
+                  <div class={`${item.color} w-12 h-12 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-${item.color.split('-')[1]}-100 dark:shadow-none`}>
+                    <item.icon size={24} />
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-lg text-zinc-900 dark:text-zinc-100">{item.title}</h3>
+                    <p class="text-zinc-500 dark:text-zinc-400 text-sm">{item.desc}</p>
+                  </div>
+                  <div class="text-zinc-300 group-hover:text-indigo-500 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </div>
                 </div>
-                <div class="flex-1">
-                  <h3 class="font-bold text-lg text-zinc-900 dark:text-zinc-100">{item.title}</h3>
-                  <p class="text-zinc-500 dark:text-zinc-400 text-sm">{item.desc}</p>
-                </div>
-                <div class="text-zinc-300 group-hover:text-indigo-500 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-              </div>
-            </A>
-          ))}
+              </A>
+            )}
+          </For>
         </section>
 
         <footer class="text-center py-8">

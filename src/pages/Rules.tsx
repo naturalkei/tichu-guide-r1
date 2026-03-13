@@ -12,6 +12,15 @@ const Rules: Component = () => {
     { id: 'special', label: '특수' },
   ];
 
+  const handsData = [
+    { name: '싱글', desc: '카드 1장' },
+    { name: '페어', desc: '숫자가 같은 카드 2장' },
+    { name: '연속 페어', desc: '숫자가 이어지는 2개 이상의 페어' },
+    { name: '트리플', desc: '숫자가 같은 카드 3장' },
+    { name: '풀하우스', desc: '트리플 + 페어' },
+    { name: '스트레이트', desc: '5장 이상의 연속된 숫자' },
+  ];
+
   return (
     <Layout>
       <div class="space-y-6">
@@ -82,19 +91,14 @@ const Rules: Component = () => {
               <div class="animate-in fade-in duration-300 space-y-4">
                 <h3 class="text-lg font-bold text-amber-600 dark:text-amber-400">족보 (조합)</h3>
                 <div class="space-y-3">
-                  {[
-                    { name: '싱글', desc: '카드 1장' },
-                    { name: '페어', desc: '숫자가 같은 카드 2장' },
-                    { name: '연속 페어', desc: '숫자가 이어지는 2개 이상의 페어' },
-                    { name: '트리플', desc: '숫자가 같은 카드 3장' },
-                    { name: '풀하우스', desc: '트리플 + 페어' },
-                    { name: '스트레이트', desc: '5장 이상의 연속된 숫자' },
-                  ].map((hand) => (
-                    <div class="flex justify-between items-center p-2 border-b border-zinc-100 dark:border-zinc-800">
-                      <span class="font-bold text-sm">{hand.name}</span>
-                      <span class="text-xs text-zinc-500">{hand.desc}</span>
-                    </div>
-                  ))}
+                  <For each={handsData}>
+                    {(hand) => (
+                      <div class="flex justify-between items-center p-2 border-b border-zinc-100 dark:border-zinc-800">
+                        <span class="font-bold text-sm">{hand.name}</span>
+                        <span class="text-xs text-zinc-500">{hand.desc}</span>
+                      </div>
+                    )}
+                  </For>
                   <div class="mt-4 p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-900/30">
                     <p class="font-bold text-sm text-red-600 dark:text-red-400">폭탄 (Bomb)</p>
                     <p class="text-xs text-red-500 mt-1">포카(숫자 4장) 또는 스트레이트 플러시(5장 이상). 언제든 난입 가능!</p>
