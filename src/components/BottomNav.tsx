@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { For } from 'solid-js';
 import type { Component } from 'solid-js';
 import { Home, BookOpen, Calculator, Award } from 'lucide-react';
@@ -15,10 +16,16 @@ const BottomNav: Component = () => {
       <div class="flex justify-around items-center h-16">
         <For each={navItems}>
           {(item) => (
-            <button class="flex flex-col items-center justify-center w-full h-full text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+            <A 
+              href={item.path} 
+              activeClass="text-indigo-600 dark:text-indigo-400" 
+              inactiveClass="text-zinc-500 dark:text-zinc-400"
+              end={true}
+              class="flex flex-col items-center justify-center w-full h-full hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
               <item.icon size={24} />
               <span class="text-xs mt-1 font-medium">{item.label}</span>
-            </button>
+            </A>
           )}
         </For>
       </div>
