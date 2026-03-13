@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.3...tichu-guide-r1-v0.2.4) (2026-03-13)
+
+
+### Bug Fixes
+
+* refine routing with Navigate and robust language prefix replacement ([eadf518](https://github.com/naturalkei/tichu-guide-r1/commit/eadf518571e537ebb23c6280d51a194d398614ce))
+
 ## [0.2.3](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.2...tichu-guide-r1-v0.2.3) (2026-03-13)
 
 
