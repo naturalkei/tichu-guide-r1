@@ -21,7 +21,7 @@ const Layout: ParentComponent = (props) => {
 
   const changeLanguage = (code: Locale) => {
     // 1. Get the current path relative to base
-    let path = location.pathname // This is relative to base in Solid Router
+    const path = location.pathname // This is relative to base in Solid Router
     
     // 2. The current language prefix from params
     const currentLang = params.lang
