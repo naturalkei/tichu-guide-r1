@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.3.2...tichu-guide-r1-v0.3.3) (2026-03-13)
+
+
+### Bug Fixes
+
+* fixed errata ([9da6fca](https://github.com/naturalkei/tichu-guide-r1/commit/9da6fca617586313ce11f47f8b6d61a52cd58b9d))
+
 ## [0.3.2](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.3.1...tichu-guide-r1-v0.3.2) (2026-03-13)
 
 
