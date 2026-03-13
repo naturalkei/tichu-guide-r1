@@ -1,4 +1,4 @@
-import { Router, Route, useNavigate } from '@solidjs/router'
+import { Router, Route, useNavigate, useLocation } from '@solidjs/router'
 import { onMount, type Component } from 'solid-js'
 import { I18nProvider, useI18n } from './contexts/I18nContext'
 import Home from './pages/Home'
@@ -9,10 +9,12 @@ import Tips from './pages/Tips'
 const AppContent: Component = () => {
   const { locale } = useI18n()
   const navigate = useNavigate()
+  const location = useLocation()
 
-  // Redirect root to current locale
+  // Redirect root or invalid language paths
   onMount(() => {
-    if (window.location.pathname === import.meta.env.BASE_URL || window.location.pathname === import.meta.env.BASE_URL + '/') {
+    const path = location.pathname
+    if (path === '/' || path === '') {
       navigate(`/${locale()}`, { replace: true })
     }
   })
@@ -28,9 +30,12 @@ const AppContent: Component = () => {
 }
 
 const App: Component = () => {
+  // Extract base from import.meta.env.BASE_URL (e.g., "/tichu-guide-r1/")
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
     <I18nProvider>
-      <Router base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <Router base={base}>
         <AppContent />
       </Router>
     </I18nProvider>

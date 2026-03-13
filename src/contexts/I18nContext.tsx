@@ -14,15 +14,13 @@ const I18nContext = createContext<I18nContextType>()
 const STORAGE_KEY = 'tichu-guide-lang'
 
 export const I18nProvider: ParentComponent = (props) => {
-  // Initial detection: URL > localStorage > Browser Lang > 'ko'
+  // Robust detection: URL parts > localStorage > Browser Lang > 'ko'
   const getInitialLocale = (): Locale => {
-    const pathParts = window.location.pathname.split('/')
-    // Find the lang part after the base path (/tichu-guide-r1/...)
-    const isProd = import.meta.env.PROD
-    const langIdx = isProd ? 2 : 1
-    const urlLang = pathParts[langIdx] as Locale
+    const pathParts = window.location.pathname.split('/').filter(Boolean)
+    // Check if any part of the path matches a supported locale
+    const urlLang = pathParts.find(part => dict[part as Locale]) as Locale
     
-    if (dict[urlLang]) return urlLang
+    if (urlLang) return urlLang
 
     const saved = localStorage.getItem(STORAGE_KEY) as Locale
     if (saved && dict[saved]) return saved
@@ -50,19 +48,24 @@ export const I18nProvider: ParentComponent = (props) => {
     localStorage.setItem(STORAGE_KEY, newLocale)
     
     // Update URL to reflect the new locale
-    const isProd = import.meta.env.PROD
-    const basePath = isProd ? '/tichu-guide-r1/' : '/'
-    const currentPath = window.location.pathname.replace(basePath, '')
-    const parts = currentPath.split('/')
+    const baseUrl = import.meta.env.BASE_URL // e.g. "/tichu-guide-r1/"
+    const currentPath = window.location.pathname
     
-    // Replace or add the lang prefix
-    if (dict[parts[0] as Locale]) {
+    // Construct new path: baseUrl + newLocale + (rest of path after old locale)
+    const pathWithoutBase = currentPath.startsWith(baseUrl) 
+      ? currentPath.substring(baseUrl.length) 
+      : currentPath.startsWith('/') ? currentPath.substring(1) : currentPath
+    
+    const parts = pathWithoutBase.split('/').filter(Boolean)
+    
+    if (parts.length > 0 && dict[parts[0] as Locale]) {
       parts[0] = newLocale
     } else {
       parts.unshift(newLocale)
     }
     
-    window.history.pushState({}, '', basePath + parts.join('/'))
+    const nextPath = (baseUrl.endsWith('/') ? baseUrl : baseUrl + '/') + parts.join('/')
+    window.history.pushState({}, '', nextPath)
   }
 
   const value: I18nContextType = {
