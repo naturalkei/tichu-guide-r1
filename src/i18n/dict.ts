@@ -38,7 +38,7 @@ export const dict = {
         normal: '일반 카드 (52장)',
         normal_desc: '4가지 문양, 각 2~A까지 13장',
         special: '특수 카드 (4장)',
-        special_desc: '참새(1), 봉(Mah Jong), 개(Dog), 용(Dragon)'
+        special_desc: '참새(1), 봉(Phoenix), 개(Dog), 용(Dragon)'
       },
       hands: {
         title: '족보 (조합)',
@@ -61,9 +61,9 @@ export const dict = {
         title: '특수 카드 상세',
         dragon: '용 (Dragon)',
         dragon_desc: '최강의 싱글 카드. 승리 시 딴 카드를 상대에게 주어야 함.',
-        mahjong: '봉 (Mah Jong)',
+        mahjong: '참새 (Mah Jong)',
         mahjong_desc: '숫자 1로 간주. 시작 플레이어가 됨. 특정 숫자 호출 가능.',
-        phoenix: '참새 (Phoenix)',
+        phoenix: '봉 (Phoenix)',
         phoenix_desc: '조커 카드. 어떤 숫자로도 변신 가능. (폭탄 제외)',
         dog: '개 (Dog)',
         dog_desc: '자신의 턴에 내면 팀원에게 턴을 넘김.'
