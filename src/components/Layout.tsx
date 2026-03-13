@@ -1,22 +1,19 @@
 import { For } from 'solid-js'
 import type { ParentComponent } from 'solid-js'
-import { useI18n } from 'solid-i18next'
 import { Github } from 'lucide-solid'
 import BottomNav from './BottomNav'
+import { useI18n } from '../contexts/I18nContext'
+import type { Locale } from '../i18n/dict'
 
 const Layout: ParentComponent = (props) => {
-  const [t, { i18n }] = useI18n() as unknown as [any, any]
+  const { t, locale, setLocale } = useI18n()
 
-  const languages = [
+  const languages: { code: Locale; label: string }[] = [
     { code: 'ko', label: '🇰🇷' },
     { code: 'en', label: '🇺🇸' },
     { code: 'ja', label: '🇯🇵' },
     { code: 'zh', label: '🇨🇳' }
   ]
-
-  const changeLanguage = (code: string) => {
-    i18n.changeLanguage(code)
-  }
 
   return (
     <div class="min-h-screen bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col pb-20">
@@ -26,9 +23,9 @@ const Layout: ParentComponent = (props) => {
           <For each={languages}>
             {(lang) => (
               <button
-                onClick={() => changeLanguage(lang.code)}
+                onClick={() => setLocale(lang.code)}
                 class={`w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xl ${
-                  i18n.language.startsWith(lang.code) ? 'bg-zinc-100 dark:bg-zinc-800' : ''
+                  locale() === lang.code ? 'bg-zinc-100 dark:bg-zinc-800' : ''
                 }`}
                 title={lang.code}
               >

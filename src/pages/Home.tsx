@@ -1,12 +1,12 @@
 import type { Component } from 'solid-js'
 import { A } from '@solidjs/router'
 import { For } from 'solid-js'
-import { useI18n } from 'solid-i18next'
 import Layout from '../components/Layout'
 import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid'
+import { useI18n } from '../contexts/I18nContext'
 
 const Home: Component = () => {
-  const [t] = useI18n() as unknown as [any]
+  const { t } = useI18n()
 
   const menuItems = () => [
     { title: t('menu.setup'), desc: t('menu.setup_desc'), icon: PlayCircle, path: '/rules', color: 'bg-blue-500' },
