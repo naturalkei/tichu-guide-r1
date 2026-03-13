@@ -1,40 +1,41 @@
 import { createSignal, For } from 'solid-js'
 import type { Component } from 'solid-js'
 import Layout from '../components/Layout'
+import { useI18n } from '../contexts/I18nContext'
 
 const Score: Component = () => {
+  const { t } = useI18n()
   const [teamAScore, setTeamAScore] = createSignal(0)
   const [teamBScore, setTeamBScore] = createSignal(0)
 
-  const cardScores = [
-    { card: '5', points: '+5점' },
-    { card: '10', points: '+10점' },
-    { card: 'K', points: '+10점' },
-    { card: '용 (Dragon)', points: '+25점' },
-    { card: '봉 (Mah Jong)', points: '-25점' },
+  const cardScores = () => [
+    { card: '5', points: '+5' },
+    { card: '10', points: '+10' },
+    { card: 'K', points: '+10' },
+    { card: t('rules.special.dragon'), points: '+25' },
+    { card: t('rules.special.mahjong'), points: '-25' },
   ]
 
   return (
     <Layout>
       <div class="space-y-6">
         <section>
-          <h2 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">점수 계산</h2>
+          <h2 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">{t('score.title')}</h2>
           
           <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl p-6 border border-indigo-100 dark:border-indigo-900/30 mb-6">
             <h3 class="font-bold text-indigo-700 dark:text-indigo-400 mb-3 text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-              점수 계산의 기초
+              {t('score.info_title')}
             </h3>
             <p class="text-xs text-indigo-600 dark:text-indigo-300 leading-relaxed">
-              게임이 끝나면 획득한 카드들의 점수를 합산합니다. <br />
-              전체 카드의 점수 총합은 항상 **100점**입니다.
+              {t('score.info_desc')}
             </p>
           </div>
 
           <div class="grid grid-cols-1 gap-4 mb-8">
-            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 text-sm">카드별 점수</h3>
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 text-sm">{t('score.card_points')}</h3>
             <div class="bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800 divide-y divide-zinc-50 dark:divide-zinc-800">
-              <For each={cardScores}>
+              <For each={cardScores()}>
                 {(item) => (
                   <div class="flex justify-between items-center p-4">
                     <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">{item.card}</span>
@@ -48,26 +49,25 @@ const Score: Component = () => {
           </div>
 
           <div class="space-y-4">
-            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 text-sm">특수 상황 보너스</h3>
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 text-sm">{t('score.special_bonus')}</h3>
             <div class="grid grid-cols-1 gap-3">
               <div class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-100 dark:border-emerald-900/30">
-                <p class="font-bold text-emerald-700 dark:text-emerald-400 text-sm">원투 (1-2위 승리)</p>
-                <p class="text-xs text-emerald-600 dark:text-emerald-300 mt-1">같은 팀이 1위와 2위를 모두 차지하면 점수 합산 없이 즉시 **200점** 획득.</p>
+                <p class="font-bold text-emerald-700 dark:text-emerald-400 text-sm">{t('score.one_two')}</p>
+                <p class="text-xs text-emerald-600 dark:text-emerald-300 mt-1">{t('score.one_two_desc')}</p>
               </div>
               <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-2xl border border-amber-100 dark:border-amber-900/30">
-                <p class="font-bold text-amber-700 dark:text-amber-400 text-sm">스몰 티츄 / 그랜드 티츄</p>
-                <p class="text-xs text-amber-600 dark:text-amber-300 mt-1">성공 시 각각 **+100점 / +200점**, 실패 시 동일한 점수 감점.</p>
+                <p class="font-bold text-amber-700 dark:text-amber-400 text-sm">{t('score.tichu_bonus')}</p>
+                <p class="text-xs text-amber-600 dark:text-amber-300 mt-1">{t('score.tichu_bonus_desc')}</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Simple Calculator Placeholder */}
         <section class="mt-8 p-6 bg-zinc-900 dark:bg-zinc-800 rounded-3xl text-white">
-          <h3 class="font-bold mb-4 text-center">퀵 점수 계산기</h3>
+          <h3 class="font-bold mb-4 text-center">{t('score.calculator')}</h3>
           <div class="flex gap-4 items-center justify-between">
             <div class="flex-1 text-center">
-              <p class="text-[10px] text-zinc-400 mb-1 uppercase tracking-wider">우리 팀</p>
+              <p class="text-[10px] text-zinc-400 mb-1 uppercase tracking-wider">{t('score.team_a')}</p>
               <input 
                 type="number" 
                 value={teamAScore()} 
@@ -77,7 +77,7 @@ const Score: Component = () => {
             </div>
             <div class="text-zinc-600 font-black text-2xl">:</div>
             <div class="flex-1 text-center">
-              <p class="text-[10px] text-zinc-400 mb-1 uppercase tracking-wider">상대 팀</p>
+              <p class="text-[10px] text-zinc-400 mb-1 uppercase tracking-wider">{t('score.team_b')}</p>
               <input 
                 type="number" 
                 value={teamBScore()} 
@@ -86,7 +86,7 @@ const Score: Component = () => {
               />
             </div>
           </div>
-          <p class="text-center text-[10px] text-zinc-500 mt-4">라운드별 합산 점수를 기록하세요.</p>
+          <p class="text-center text-[10px] text-zinc-500 mt-4">{t('score.calc_note')}</p>
         </section>
       </div>
     </Layout>
