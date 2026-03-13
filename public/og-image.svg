@@ -11,7 +11,7 @@
   
   <!-- Text -->
   <text x="350" y="300" font-family="system-ui, sans-serif" font-weight="900" font-size="80" fill="white">Tichu Guide</text>
-  <text x="350" y="380" font-family="system-ui, sans-serif" font-weight="500" font-size="30" fill="#c7d2fe">Clean, Ad-free Board Game Rules &amp; Strategy</text>
+  <text x="350" y="380" font-family="system-ui, sans-serif" font-weight="500" font-size="30" fill="#c7d2fe">Clean &amp; Simple Board Game Rules &amp; Strategy</text>
   
   <!-- URL -->
   <text x="100" y="580" font-family="monospace" font-weight="500" font-size="20" fill="white" fill-opacity="0.5">https://naturalkei.github.io/tichu-guide-r1/</text>

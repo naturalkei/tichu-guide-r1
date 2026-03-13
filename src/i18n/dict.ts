@@ -1,7 +1,7 @@
 export const dict = {
   ko: {
     title: 'Tichu Guide',
-    subtitle: '광고 없이 깔끔하게 확인하는 티츄 보드게임의 모든 규칙과 팁',
+    subtitle: '깔끔하게 확인하는 티츄 보드게임의 모든 규칙과 팁',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: '홈',
@@ -104,7 +104,7 @@ export const dict = {
   },
   en: {
     title: 'Tichu Guide',
-    subtitle: 'All rules and tips for Tichu board game, cleanly without ads',
+    subtitle: 'All rules and tips for Tichu board game, cleanly and simply',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: 'Home',
@@ -207,10 +207,10 @@ export const dict = {
   },
   ja: {
     title: 'Tichu Guide',
-    subtitle: '広告なしでスッキリ確認できるティチュの全ルールとチップ',
+    subtitle: 'スッキリ確認できるティチュの全ルールとチップ',
     footer_credit: 'Designed by naturalkei',
     nav: {
-      home: 'ホーム',
+      home: '홈',
       rules: 'ルール',
       score: 'スコア',
       tips: 'チップ'
@@ -237,12 +237,12 @@ export const dict = {
         step1: '4人のプレイヤーが2人ずつチームを組みます。(チームメイトは向かい合って座ります)',
         step2: '全56枚のカードを1枚ずつ配ります。(各自14枚)',
         step3: 'グランドティチュ：最初の8枚を受け取った時点で宣言可能。',
-        step4: 'カード交換：味方に1枚、相手2人に各1枚、計3枚を同時に交換します。'
+        step4: '카드 교환: 味方に1枚, 相手2人に各1枚, 計3枚を同時に交換します。'
       },
       cards: {
         title: 'カード構成',
         normal: '通常カード (52枚)',
-        normal_desc: '4つのスート、各2〜Aまでの13枚',
+        normal_desc: '4つのスート, 各2〜Aまでの13枚',
         special: '特殊カード (4枚)',
         special_desc: '雀(1), 鳳凰, 犬, 龍'
       },
@@ -261,7 +261,7 @@ export const dict = {
         straight: 'ストレート',
         straight_desc: '5枚以上の連続した数字',
         bomb: '爆弾 (Bomb)',
-        bomb_desc: '4枚の同数 또는 5枚以上のストレートフラッシュ。いつでも出せます！'
+        bomb_desc: '4枚の同数 또는 5枚以上のストレートフラッシュ. いつでも出せます!'
       },
       special: {
         title: '特殊カード詳細',
@@ -272,7 +272,7 @@ export const dict = {
         phoenix: '鳳凰 (Phoenix)',
         phoenix_desc: 'ジョーカー。爆弾以外のどの数字にもなれます。',
         dog: '犬 (Dog)',
-        dog_desc: '自分のターンに使うと、味方にターンを回します。'
+        dog_desc: '自分のターンに使うと, 味方にターンを回します。'
       }
     },
     score: {
@@ -282,9 +282,9 @@ export const dict = {
       card_points: 'カード別の点数',
       special_bonus: '特殊ボーナス',
       one_two: 'ワンツー (1-2位独占)',
-      one_two_desc: '同じチームが1位と2位を独占した場合、点数計算なしで即座に200点獲得。',
+      one_two_desc: '同じチームが1位と2位を独占した場合, 点数計算なしで即座に200点獲得。',
       tichu_bonus: 'スモール / グランドティチュ',
-      tichu_bonus_desc: '成功：+100 / +200点。失敗：同等の減点。',
+      tichu_bonus_desc: '成功: +100 / +200点。失敗: 同等の減点。',
       calculator: 'クイック計算機',
       team_a: '自チーム',
       team_b: '相手チーム',
@@ -296,21 +296,21 @@ export const dict = {
       hero_desc: '他のプレイヤーへの配慮がゲームをより楽しくします。',
       etiquette: '進行マナー',
       etiquette_items: [
-        { title: 'カード交換のマナー', desc: '全員がカードを伏せるまで待ってから、同時に確認します。' },
-        { title: '遅延の防止', desc: '自分の番が来る前に出すカードを考えておき、スムーズな進行を助けます。' },
+        { title: 'カード交換のマナー', desc: '全員がカードを伏せるまで待ってから, 同時に確認します。' },
+        { title: '遅延の防止', desc: '自分の番が来る前に出すカードを考えておき, スムーズな進行を助けます。' },
         { title: 'コミュニケーション', desc: '手札に関する直接的な情報の共有は禁止されています。' }
       ],
       dos_donts: "Do's & Don'ts",
       dos_donts_items: [
-        { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら、自分が上がるより味方の1位を助けるプレイをしましょう。' },
-        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュを宣言するのはマ너違反です。' }
+        { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら, 自分が上がるより味方の1位を助けるプレイをしましょう。' },
+        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュを宣言するのはマナー違反です。' }
       ],
-      footer_quote: '「勝敗よりも大切なのは、楽しいゲームを作る態度です」'
+      footer_quote: '「勝敗よりも大切なのは, 楽しいゲームを作る態度です」'
     }
   },
   zh: {
     title: 'Tichu Guide',
-    subtitle: '无广告，清晰查看提储桌游的所有规则和技巧',
+    subtitle: '清晰查看提储桌游的所有规则和技巧',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: '首页',
@@ -346,7 +346,7 @@ export const dict = {
         title: '卡牌构成',
         normal: '普通牌 (52张)',
         normal_desc: '4种花色，每种从2到A各13张',
-        special: '特殊牌 (4장)',
+        special: '特殊牌 (4张)',
         special_desc: '雀(1), 凤, 狗, 龙'
       },
       hands: {
@@ -400,13 +400,13 @@ export const dict = {
       etiquette: '游戏礼仪',
       etiquette_items: [
         { title: '换牌礼仪', desc: '等待所有玩家都放好换牌后，再同时查看。' },
-        { title: '避免不必要的延迟', desc: '在轮도自己之前先想好要出的牌，以确保游戏流畅。' },
+        { title: '避免不必要的延迟', desc: '在轮到自己之前先想好要出的牌，以确保游戏流畅。' },
         { title: '沟通', desc: '严禁直接通过对话分享手牌信息。' }
       ],
       dos_donts: "Do's & Don'ts",
       dos_donts_items: [
         { type: 'do', title: '支持队友的提储', desc: '如果队友喊了提储，应协助其获得第一，而不是自己争第一。' },
-        { type: 'dont', title: '过晚喊提储', desc: '在已经有人出牌后才喊提储是不符合礼仪的。' }
+        { type: 'dont', title: '过晚喊提储', desc: '在已经有人出牌后才喊提储是不符合礼仪의。' }
       ],
       footer_quote: '“比起胜负，更重要的是创造愉快游戏氛围的态度。”'
     }
