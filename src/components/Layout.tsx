@@ -20,27 +20,31 @@ const Layout: ParentComponent = (props) => {
   ]
 
   const changeLanguage = (code: Locale) => {
-    // 1. Get the current path relative to base
-    const path = location.pathname // This is relative to base in Solid Router
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+    const fullPath = location.pathname
+    
+    // 1. Strip base from full path if present
+    const pathWithoutBase = fullPath.startsWith(base) 
+      ? fullPath.substring(base.length) 
+      : fullPath
     
     // 2. The current language prefix from params
     const currentLang = params.lang
     
     let target: string
     if (currentLang) {
-      // Replace /en/... with /ko/...
-      // Use a more robust regex that handles potential trailing slashes
-      target = path.replace(new RegExp(`^/?${currentLang}`), `/${code}`)
+      // Replace /en/... with /ko/... precisely at the start of the relative path
+      target = pathWithoutBase.replace(new RegExp(`^/?${currentLang}`), `/${code}`)
     } else {
-      // Fallback if no lang param (shouldn't happen in nested routes)
+      // Fallback
       target = `/${code}`
     }
 
-    // Failsafe: Ensure we don't have double slashes
-    target = '/' + target.split('/').filter(Boolean).join('/')
+    // 3. Failsafe: Ensure clean target path
+    const cleanTarget = '/' + target.split('/').filter(Boolean).join('/')
     
-    console.log('UI: Switching language to:', code, 'from path:', path, 'target:', target)
-    navigate(target)
+    console.log('UI: Switch Lang:', code, 'Current:', fullPath, 'Target:', cleanTarget)
+    navigate(cleanTarget)
   }
 
   return (

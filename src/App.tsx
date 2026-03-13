@@ -20,19 +20,19 @@ const LangWrapper: ParentComponent = (props) => {
   return <>{props.children}</>
 }
 
+const RootRedirect: Component = () => {
+  const { locale } = useI18n()
+  // Use a derived href to ensure reactivity
+  return <Navigate href={`/${locale()}`} />
+}
+
 const App: Component = () => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   return (
     <I18nProvider>
       <Router base={base}>
-        {/* Redirect root exactly to the current or default locale */}
-        <Route path="/" component={() => {
-          const { locale } = useI18n()
-          return <Navigate href={`/${locale()}`} />
-        }} />
-
-        {/* The lang-prefixed routes */}
+        {/* Language-prefixed routes */}
         <Route path="/:lang" component={LangWrapper}>
           <Route path="/" component={Home} />
           <Route path="/rules" component={Rules} />
@@ -40,11 +40,11 @@ const App: Component = () => {
           <Route path="/tips" component={Tips} />
         </Route>
         
+        {/* Redirect root exactly to the current or default locale */}
+        <Route path="/" component={RootRedirect} />
+        
         {/* Fallback for any other path */}
-        <Route path="*param" component={() => {
-          const { locale } = useI18n()
-          return <Navigate href={`/${locale()}`} />
-        }} />
+        <Route path="*param" component={RootRedirect} />
       </Router>
     </I18nProvider>
   )
