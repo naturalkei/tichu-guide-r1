@@ -6,10 +6,5 @@
       "package-name": "tichu-guide-r1",
       "initial-version": "0.1.0"
     }
-  },
-  "plugins": [
-    {
-      "type": "node"
-    }
-  ]
+  }
 }

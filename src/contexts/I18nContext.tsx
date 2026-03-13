@@ -14,7 +14,7 @@ const I18nContext = createContext<I18nContextType>()
 const STORAGE_KEY = 'tichu-guide-lang'
 
 export const I18nProvider: ParentComponent = (props) => {
-  // Robust detection: URL parts > localStorage > Browser Lang > 'ko'
+  // Robust detection: URL parts > localStorage > Browser Lang > 'en'
   const getInitialLocale = (): Locale => {
     const pathParts = window.location.pathname.split('/').filter(Boolean)
     // Check if any part of the path matches a supported locale
@@ -35,11 +35,16 @@ export const I18nProvider: ParentComponent = (props) => {
 
   const t = (key: string): string => {
     const keys = key.split('.')
-    let value: any = dict[locale()]
+    let value: unknown = dict[locale()]
     for (const k of keys) {
-      value = value?.[k]
+      if (value && typeof value === 'object' && k in value) {
+        value = (value as Record<string, unknown>)[k]
+      } else {
+        value = undefined
+        break
+      }
     }
-    return value || key
+    return typeof value === 'string' ? value : key
   }
 
   const setLocale = (newLocale: Locale) => {

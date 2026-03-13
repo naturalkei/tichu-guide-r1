@@ -2,7 +2,6 @@ import { A } from '@solidjs/router'
 import { For } from 'solid-js'
 import type { Component } from 'solid-js'
 import { Home, BookOpen, Calculator, Award } from 'lucide-solid'
-import { useI18n } from '../contexts/I18nContext'
 
 const BottomNav: Component = () => {
   const { t, locale } = useI18n()
