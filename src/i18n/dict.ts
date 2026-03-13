@@ -1,7 +1,7 @@
 export const dict = {
   ko: {
     title: 'Tichu Guide',
-    subtitle: '깔끔하게 확인하는 티츄 보드게임의 모든 규칙과 팁',
+    subtitle: '티츄 보드게임의 모든 규칙과 팁',
     footer_credit: 'Designed by naturalkei',
     nav: {
       home: '홈',
