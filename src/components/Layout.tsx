@@ -19,12 +19,22 @@ const Layout: ParentComponent = (props) => {
   ]
 
   const changeLanguage = (code: Locale) => {
+    console.log('UI: Requesting language change to:', code)
     // Navigate to the same sub-path but with a different language prefix
+    // location.pathname is relative to base
     const currentPath = location.pathname.split('/').filter(Boolean)
-    // If the first part is a locale, replace it. Otherwise, unshift.
-    // In our nested structure, it should always be the first part.
-    currentPath[0] = code
-    navigate('/' + currentPath.join('/'))
+    
+    // In our nested structure /:lang/..., the first part should be the locale
+    // But if we are at root redirecting, it might be empty.
+    if (currentPath.length > 0) {
+      currentPath[0] = code
+    } else {
+      currentPath.push(code)
+    }
+    
+    const target = '/' + currentPath.join('/')
+    console.log('UI: Navigating to:', target)
+    navigate(target)
   }
 
   return (

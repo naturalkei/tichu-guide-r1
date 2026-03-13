@@ -10,10 +10,12 @@ import type { Locale } from './i18n/dict'
 const LangWrapper: ParentComponent = (props) => {
   const { setLocale } = useI18n()
   const params = useParams()
+  
+  console.log('App: LangWrapper matched. Params:', JSON.stringify(params))
 
-  // Sync locale from URL parameter
   createEffect(() => {
     if (params.lang) {
+      console.log('App: Syncing locale from URL param:', params.lang)
       setLocale(params.lang as Locale)
     }
   })
@@ -27,9 +29,12 @@ const RootRedirect: Component = () => {
   const location = useLocation()
   
   onMount(() => {
-    // Only redirect if we are exactly at the root of the base path
+    console.log('App: RootRedirect matched. Path:', location.pathname)
+    // Only redirect if we are at the root of the relative path
     if (location.pathname === '/' || location.pathname === '') {
-      navigate(`/${locale()}`, { replace: true })
+      const target = `/${locale()}`
+      console.log('App: Redirecting from root to:', target)
+      navigate(target, { replace: true })
     }
   })
   
@@ -37,13 +42,13 @@ const RootRedirect: Component = () => {
 }
 
 const App: Component = () => {
-  // Extract base from import.meta.env.BASE_URL (e.g., "/tichu-guide-r1/")
   const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  console.log('App: Initializing. BASE_URL:', import.meta.env.BASE_URL, 'Router Base:', base)
 
   return (
     <I18nProvider>
       <Router base={base}>
-        {/* Standard nested route structure */}
+        {/* The lang-prefixed routes */}
         <Route path="/:lang" component={LangWrapper}>
           <Route path="/" component={Home} />
           <Route path="/rules" component={Rules} />
@@ -51,7 +56,7 @@ const App: Component = () => {
           <Route path="/tips" component={Tips} />
         </Route>
         
-        {/* Root and Fallback redirects */}
+        {/* Handle root and other paths */}
         <Route path="/" component={RootRedirect} />
         <Route path="*param" component={RootRedirect} />
       </Router>

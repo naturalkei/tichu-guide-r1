@@ -18,14 +18,25 @@ export const I18nProvider: ParentComponent = (props) => {
   const getInitialLocale = (): Locale => {
     const pathParts = window.location.pathname.split('/').filter(Boolean)
     const urlLang = pathParts.find(part => dict[part as Locale]) as Locale
-    if (urlLang) return urlLang
+    
+    if (urlLang) {
+      console.log('I18n: Detected locale from URL:', urlLang)
+      return urlLang
+    }
 
     const saved = localStorage.getItem(STORAGE_KEY) as Locale
-    if (saved && dict[saved]) return saved
+    if (saved && dict[saved]) {
+      console.log('I18n: Using saved locale:', saved)
+      return saved
+    }
 
     const browserLang = navigator.language.split('-')[0] as Locale
-    if (dict[browserLang]) return browserLang
+    if (dict[browserLang]) {
+      console.log('I18n: Using browser locale:', browserLang)
+      return browserLang
+    }
 
+    console.log('I18n: Fallback to en')
     return 'en'
   }
 
@@ -52,6 +63,7 @@ export const I18nProvider: ParentComponent = (props) => {
 
   const setLocale = (newLocale: Locale) => {
     if (newLocale === locale()) return
+    console.log('I18n: Changing locale to:', newLocale)
     _setLocale(newLocale)
     localStorage.setItem(STORAGE_KEY, newLocale)
   }
