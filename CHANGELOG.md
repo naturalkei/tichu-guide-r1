@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.3.0...tichu-guide-r1-v0.3.1) (2026-03-13)
+
+
+### Bug Fixes
+
+* correct Japanese and Chinese translations and resolve package.json conflict ([1e967aa](https://github.com/naturalkei/tichu-guide-r1/commit/1e967aa7f96cd734f32d6a5aa5dd461ccb38e570))
+
 ## [0.3.0](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.5...tichu-guide-r1-v0.3.0) (2026-03-13)
 
 
