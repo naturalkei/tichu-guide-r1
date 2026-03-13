@@ -18,7 +18,15 @@ const RootRedirect: Component = () => {
 }
 
 const App: Component = () => {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  return (
+    <Router base={import.meta.env.BASE_URL}>
+      <Route path="/" component={Home} />
+      <Route path="/rules" component={Rules} />
+      <Route path="/score" component={Score} />
+      <Route path="/tips" component={Tips} />
+    </Router>
+  );
+};
 
   return (
     <I18nProvider>

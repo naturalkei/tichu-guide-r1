@@ -1,9 +1,8 @@
-import type { Component } from 'solid-js'
-import { A } from '@solidjs/router'
-import { For } from 'solid-js'
-import Layout from '../components/Layout'
-import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid'
-import { useI18n } from '../contexts/I18nContext'
+import type { Component } from 'solid-js';
+import { A } from "@solidjs/router";
+import { For } from 'solid-js';
+import Layout from '../components/Layout';
+import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid';
 
 const Home: Component = () => {
   const { t, locale } = useI18n()
