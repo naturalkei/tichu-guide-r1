@@ -17,10 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Resolve release PR
         id: release-pr
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           # Try to get the PR number from the workflow_run event
           pr_number=$(jq -r '.workflow_run.pull_requests[0].number // empty' "$GITHUB_EVENT_PATH")
@@ -32,6 +36,7 @@ jobs:
           fi
 
           if [ -z "$pr_number" ]; then
+            echo "PR not found for head_sha: ${{ github.event.workflow_run.head_sha }}"
             echo "should_merge=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -39,22 +44,26 @@ jobs:
           pr_json=$(gh pr view "$pr_number" --json number,title,baseRefName,headRefName,state,isDraft)
           title=$(echo "$pr_json" | jq -r '.title')
           base_ref=$(echo "$pr_json" | jq -r '.baseRefName')
-          head_ref=$(echo "$pr_json" | jq -r '.headRefName')
           state=$(echo "$pr_json" | jq -r '.state')
           is_draft=$(echo "$pr_json" | jq -r '.isDraft')
 
+          echo "Evaluating PR #$pr_number: $title"
+
           if [ "$state" != "OPEN" ] || [ "$is_draft" != "false" ]; then
+            echo "PR is not open or is a draft."
             echo "should_merge=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           # Release please PR title pattern
           if [[ ! "$title" =~ ^chore\(.*\):\ release.* ]]; then
+              echo "PR title does not match release pattern."
               echo "should_merge=false" >> "$GITHUB_OUTPUT"
               exit 0
           fi
 
           if [ "$base_ref" != "main" ]; then
+            echo "Base branch is not main."
             echo "should_merge=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -66,4 +75,5 @@ jobs:
         if: steps.release-pr.outputs.should_merge == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: gh pr merge "${{ steps.release-pr.outputs.number }}" --squash --delete-branch
