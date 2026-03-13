@@ -1,4 +1,4 @@
-# Tichu Guide R1 (티츄 가이드 R1)
+# Tichu Guide R1
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
