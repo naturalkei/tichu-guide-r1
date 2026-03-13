@@ -9,8 +9,8 @@ const Layout: ParentComponent = (props) => {
   const { t, locale, setLocale } = useI18n()
 
   const languages: { code: Locale; label: string }[] = [
-    { code: 'ko', label: '🇰🇷' },
     { code: 'en', label: '🇺🇸' },
+    { code: 'ko', label: '🇰🇷' },
     { code: 'ja', label: '🇯🇵' },
     { code: 'zh', label: '🇨🇳' }
   ]

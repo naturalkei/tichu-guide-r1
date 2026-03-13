@@ -28,7 +28,7 @@ export const I18nProvider: ParentComponent = (props) => {
     const browserLang = navigator.language.split('-')[0] as Locale
     if (dict[browserLang]) return browserLang
 
-    return 'ko'
+    return 'en'
   }
 
   const [locale, _setLocale] = createSignal<Locale>(getInitialLocale())

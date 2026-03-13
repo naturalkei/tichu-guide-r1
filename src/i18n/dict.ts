@@ -1,6 +1,6 @@
 export const dict = {
   ko: {
-    title: '티츄 가이드 R1',
+    title: 'Tichu Guide',
     subtitle: '광고 없이 깔끔하게 확인하는 티츄 보드게임의 모든 규칙과 팁',
     footer_credit: 'Designed by naturalkei',
     nav: {
@@ -103,7 +103,7 @@ export const dict = {
     }
   },
   en: {
-    title: 'Tichu Guide R1',
+    title: 'Tichu Guide',
     subtitle: 'All rules and tips for Tichu board game, cleanly without ads',
     footer_credit: 'Designed by naturalkei',
     nav: {
@@ -206,7 +206,7 @@ export const dict = {
     }
   },
   ja: {
-    title: 'ティチュガイド R1',
+    title: 'Tichu Guide',
     subtitle: '広告なしでスッキリ確認できるティチュの全ルールとチップ',
     footer_credit: 'Designed by naturalkei',
     nav: {
@@ -261,7 +261,7 @@ export const dict = {
         straight: 'ストレート',
         straight_desc: '5枚以上の連続した数字',
         bomb: '爆弾 (Bomb)',
-        bomb_desc: '4枚の同数または5枚以上のストレートフラッシュ。いつでも出せます！'
+        bomb_desc: '4枚の同数 또는 5枚以上のストレートフラッシュ。いつでも出せます！'
       },
       special: {
         title: '特殊カード詳細',
@@ -303,13 +303,13 @@ export const dict = {
       dos_donts: "Do's & Don'ts",
       dos_donts_items: [
         { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら、自分が上がるより味方の1位を助けるプレイをしましょう。' },
-        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュを宣言するのはマナー違反です。' }
+        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュを宣言するのはマ너違反です。' }
       ],
       footer_quote: '「勝敗よりも大切なのは、楽しいゲームを作る態度です」'
     }
   },
   zh: {
-    title: '提储指南 R1',
+    title: 'Tichu Guide',
     subtitle: '无广告，清晰查看提储桌游的所有规则和技巧',
     footer_credit: 'Designed by naturalkei',
     nav: {
@@ -346,7 +346,7 @@ export const dict = {
         title: '卡牌构成',
         normal: '普通牌 (52张)',
         normal_desc: '4种花色，每种从2到A各13张',
-        special: '特殊牌 (4张)',
+        special: '特殊牌 (4장)',
         special_desc: '雀(1), 凤, 狗, 龙'
       },
       hands: {
@@ -400,7 +400,7 @@ export const dict = {
       etiquette: '游戏礼仪',
       etiquette_items: [
         { title: '换牌礼仪', desc: '等待所有玩家都放好换牌后，再同时查看。' },
-        { title: '避免不必要的延迟', desc: '在轮到自己之前先想好要出的牌，以确保游戏流畅。' },
+        { title: '避免不必要的延迟', desc: '在轮도自己之前先想好要出的牌，以确保游戏流畅。' },
         { title: '沟通', desc: '严禁直接通过对话分享手牌信息。' }
       ],
       dos_donts: "Do's & Don'ts",
