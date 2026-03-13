@@ -94,7 +94,7 @@ export const dict = {
         { title: '불필요한 딜레이 방지', desc: '자신의 차례가 오기 전에 미리 낼 카드를 생각하여 원활한 진행을 돕습니다.' },
         { title: '팀원과의 소통', desc: '게임 중 직접적인 대화로 정보를 공유하는 것은 금지되어 있습니다.' }
       ],
-      dos_donts: "Do's & Don'ts",
+      dos_donts: 'Do\'s & Don\'ts',
       dos_donts_items: [
         { type: 'do', title: '팀원의 티츄 응원하기', desc: '팀원이 티츄를 불렀다면, 자신이 1등을 하기보다 팀원의 1등을 돕는 플레이를 하세요.' },
         { type: 'dont', title: '늦은 티츄 선언', desc: '이미 카드가 나간 뒤에 티츄를 선언하는 것은 에티켓에 어긋납니다.' }
@@ -197,7 +197,7 @@ export const dict = {
         { title: 'Avoid Unnecessary Delays', desc: 'Think about your move before your turn to ensure smooth gameplay.' },
         { title: 'Communication', desc: 'Directly sharing information about your hand is strictly forbidden.' }
       ],
-      dos_donts: "Do's & Don'ts",
+      dos_donts: 'Do\'s & Don\'ts',
       dos_donts_items: [
         { type: 'do', title: 'Support Teammate’s Tichu', desc: 'If your teammate calls Tichu, play to help them finish 1st rather than trying to finish 1st yourself.' },
         { type: 'dont', title: 'Late Tichu Declaration', desc: 'Declaring Tichu after a card has already been played is against etiquette.' }
@@ -300,7 +300,7 @@ export const dict = {
         { title: '遅延の防止', desc: '自分の番が来る前に出すカードを考えておき、スムーズな進行を助けます.' },
         { title: 'コミュニケーション', desc: '手札に関する直接的な情報の共有は禁止されています。' }
       ],
-      dos_donts: "Do's & Don'ts",
+      dos_donts: 'Do\'s & Don\'ts',
       dos_donts_items: [
         { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら、自分が上がるより味方の1位を助けるプレイをしましょう。' },
         { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュ를 宣言するのはマナー違反です。' }
@@ -403,7 +403,7 @@ export const dict = {
         { title: '避免不必要的延迟', desc: '在轮到自己之前先想好要出的牌，以确保游戏流畅。' },
         { title: '沟通', desc: '严禁直接通过对话分享手牌信息。' }
       ],
-      dos_donts: "Do's & Don'ts",
+      dos_donts: 'Do\'s & Don\'ts',
       dos_donts_items: [
         { type: 'do', title: '支持队友的提储', desc: '如果队友喊了提储，应协助其获得第一，而不是自己争第一。' },
         { type: 'dont', title: '过晚喊提储', desc: '在已经有人出牌后才喊提储是不符合礼仪的。' }
