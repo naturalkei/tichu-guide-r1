@@ -6,13 +6,13 @@ import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid'
 import { useI18n } from '../contexts/I18nContext'
 
 const Home: Component = () => {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
   const menuItems = () => [
-    { title: t('menu.setup'), desc: t('menu.setup_desc'), icon: PlayCircle, path: '/rules', color: 'bg-blue-500' },
-    { title: t('menu.rules'), desc: t('menu.rules_desc'), icon: BookOpen, path: '/rules', color: 'bg-emerald-500' },
-    { title: t('menu.score'), desc: t('menu.score_desc'), icon: Calculator, path: '/score', color: 'bg-amber-500' },
-    { title: t('menu.tips'), desc: t('menu.tips_desc'), icon: Award, path: '/tips', color: 'bg-purple-500' },
+    { title: t('menu.setup'), desc: t('menu.setup_desc'), icon: PlayCircle, path: `/${locale()}/rules`, color: 'bg-blue-500' },
+    { title: t('menu.rules'), desc: t('menu.rules_desc'), icon: BookOpen, path: `/${locale()}/rules`, color: 'bg-emerald-500' },
+    { title: t('menu.score'), desc: t('menu.score_desc'), icon: Calculator, path: `/${locale()}/score`, color: 'bg-amber-500' },
+    { title: t('menu.tips'), desc: t('menu.tips_desc'), icon: Award, path: `/${locale()}/tips`, color: 'bg-purple-500' },
   ]
 
   return (

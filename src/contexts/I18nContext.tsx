@@ -11,8 +11,29 @@ type I18nContextType = {
 
 const I18nContext = createContext<I18nContextType>()
 
+const STORAGE_KEY = 'tichu-guide-lang'
+
 export const I18nProvider: ParentComponent = (props) => {
-  const [locale, setLocale] = createSignal<Locale>('ko')
+  // Initial detection: URL > localStorage > Browser Lang > 'ko'
+  const getInitialLocale = (): Locale => {
+    const pathParts = window.location.pathname.split('/')
+    // Find the lang part after the base path (/tichu-guide-r1/...)
+    const isProd = import.meta.env.PROD
+    const langIdx = isProd ? 2 : 1
+    const urlLang = pathParts[langIdx] as Locale
+    
+    if (dict[urlLang]) return urlLang
+
+    const saved = localStorage.getItem(STORAGE_KEY) as Locale
+    if (saved && dict[saved]) return saved
+
+    const browserLang = navigator.language.split('-')[0] as Locale
+    if (dict[browserLang]) return browserLang
+
+    return 'ko'
+  }
+
+  const [locale, _setLocale] = createSignal<Locale>(getInitialLocale())
 
   const t = (key: string): string => {
     const keys = key.split('.')
@@ -21,6 +42,27 @@ export const I18nProvider: ParentComponent = (props) => {
       value = value?.[k]
     }
     return value || key
+  }
+
+  const setLocale = (newLocale: Locale) => {
+    if (newLocale === locale()) return
+    _setLocale(newLocale)
+    localStorage.setItem(STORAGE_KEY, newLocale)
+    
+    // Update URL to reflect the new locale
+    const isProd = import.meta.env.PROD
+    const basePath = isProd ? '/tichu-guide-r1/' : '/'
+    const currentPath = window.location.pathname.replace(basePath, '')
+    const parts = currentPath.split('/')
+    
+    // Replace or add the lang prefix
+    if (dict[parts[0] as Locale]) {
+      parts[0] = newLocale
+    } else {
+      parts.unshift(newLocale)
+    }
+    
+    window.history.pushState({}, '', basePath + parts.join('/'))
   }
 
   const value: I18nContextType = {

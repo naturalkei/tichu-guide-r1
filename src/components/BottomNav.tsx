@@ -5,13 +5,13 @@ import { Home, BookOpen, Calculator, Award } from 'lucide-solid'
 import { useI18n } from '../contexts/I18nContext'
 
 const BottomNav: Component = () => {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
   const navItems = () => [
-    { label: t('nav.home'), icon: Home, path: '/' },
-    { label: t('nav.rules'), icon: BookOpen, path: '/rules' },
-    { label: t('nav.score'), icon: Calculator, path: '/score' },
-    { label: t('nav.tips'), icon: Award, path: '/tips' },
+    { label: t('nav.home'), icon: Home, path: `/${locale()}` },
+    { label: t('nav.rules'), icon: BookOpen, path: `/${locale()}/rules` },
+    { label: t('nav.score'), icon: Calculator, path: `/${locale()}/score` },
+    { label: t('nav.tips'), icon: Award, path: `/${locale()}/tips` },
   ]
 
   return (
