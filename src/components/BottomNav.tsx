@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { For } from 'solid-js';
 import type { Component } from 'solid-js';
-import { Home, BookOpen, Calculator, Award } from 'lucide-react';
+import { Home, BookOpen, Calculator, Award } from 'lucide-solid';
 
 const BottomNav: Component = () => {
   const navItems = [

@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     solid(),
     tailwindcss(),
   ],
-  base: '/tichu-guide-r1/',
-})
+  base: mode === 'production' ? '/tichu-guide-r1/' : '/',
+}))
