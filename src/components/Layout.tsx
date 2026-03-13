@@ -50,7 +50,12 @@ const Layout: ParentComponent = (props) => {
   return (
     <div class="min-h-screen bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col pb-20">
       <header class="sticky top-0 z-10 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 px-4 h-14 flex items-center justify-between">
-        <h1 class="text-lg font-bold tracking-tight">{t('title')}</h1>
+        <button 
+          onClick={() => navigate(`/${locale()}`)}
+          class="text-lg font-bold tracking-tight hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        >
+          {t('title')}
+        </button>
         <div class="flex items-center gap-2">
           <For each={languages}>
             {(lang) => (
