@@ -20,7 +20,7 @@ A Korean guide site that provides Tichu board game rules and guides with a clean
 - **Release Automation:** Automate versioning and CHANGELOG generation through the `release-please` workflow.
 
 ### 3. Development Workflow
-- **Branch Strategy:** Perform all individual tasks and instructions in independent feature branches, and merge into the `main` branch after task completion.
+- **Branch Strategy:** Every single instruction or task must be performed in a new feature branch (e.g., `feat/`, `fix/`, `docs/`). After completing the task and verification, the branch must be merged into the `main` branch.
 - **Deployment Process:** Do not merge directly into the `release` branch; you must create a Pull Request from the `main` branch to the `release` branch for merging. During this process, the automatic deployment and release management pipeline will run.
 - **Branch Cleanup:** Immediately delete the target feature branch from local and remote repositories after merging or completion of the Pull Request to keep the repository clean.
 - **Commit Messages:** Write according to the [Conventional Commits](https://www.conventionalcommits.org/) specification. (e.g., `feat:`, `fix:`, `docs:`, `chore:`)
