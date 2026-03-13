@@ -94,7 +94,7 @@ export const dict = {
         { title: '불필요한 딜레이 방지', desc: '자신의 차례가 오기 전에 미리 낼 카드를 생각하여 원활한 진행을 돕습니다.' },
         { title: '팀원과의 소통', desc: '게임 중 직접적인 대화로 정보를 공유하는 것은 금지되어 있습니다.' }
       ],
-      dos_donts: 'Do\'s & Don\'ts',
+      dos_donts: "Do's & Don'ts",
       dos_donts_items: [
         { type: 'do', title: '팀원의 티츄 응원하기', desc: '팀원이 티츄를 불렀다면, 자신이 1등을 하기보다 팀원의 1등을 돕는 플레이를 하세요.' },
         { type: 'dont', title: '늦은 티츄 선언', desc: '이미 카드가 나간 뒤에 티츄를 선언하는 것은 에티켓에 어긋납니다.' }
@@ -197,7 +197,7 @@ export const dict = {
         { title: 'Avoid Unnecessary Delays', desc: 'Think about your move before your turn to ensure smooth gameplay.' },
         { title: 'Communication', desc: 'Directly sharing information about your hand is strictly forbidden.' }
       ],
-      dos_donts: 'Do\'s & Don\'ts',
+      dos_donts: "Do's & Don'ts",
       dos_donts_items: [
         { type: 'do', title: 'Support Teammate’s Tichu', desc: 'If your teammate calls Tichu, play to help them finish 1st rather than trying to finish 1st yourself.' },
         { type: 'dont', title: 'Late Tichu Declaration', desc: 'Declaring Tichu after a card has already been played is against etiquette.' }
@@ -210,19 +210,19 @@ export const dict = {
     subtitle: 'ティチュの全ルールとチップ',
     footer_credit: 'Designed by naturalkei',
     nav: {
-      home: '홈',
+      home: 'ホーム',
       rules: 'ルール',
       score: 'スコア',
       tips: 'チップ'
     },
     menu: {
       setup: '準備',
-      setup_desc: '카드 구성과配布',
+      setup_desc: 'カード構成と配布',
       rules: '詳細ルール',
       rules_desc: '役と進行方法',
       score: '得点計算',
       score_desc: '計算機とボーナス',
-      tips: 'マナー',
+      tips: 'マ너',
       tips_desc: 'エチケットガイド'
     },
     rules: {
@@ -237,12 +237,12 @@ export const dict = {
         step1: '4人のプレイヤーが2人ずつチームを組みます。(チームメイトは向かい合って座ります)',
         step2: '全56枚のカードを1枚ずつ配ります。(各自14枚)',
         step3: 'グランドティチュ：最初の8枚を受け取った時点で宣言可能。',
-        step4: '카드 교환: 味方に1枚, 相手2人に各1枚, 計3枚를 동시에 교환합니다.'
+        step4: 'カード交換：味方に1枚、相手2人に各1枚、計3枚を同時に交換します。'
       },
       cards: {
         title: 'カード構成',
         normal: '通常カード (52枚)',
-        normal_desc: '4つのスート, 各2〜Aまでの13枚',
+        normal_desc: '4つのスート、各2〜Aまでの13枚',
         special: '特殊カード (4枚)',
         special_desc: '雀(1), 鳳凰, 犬, 龍'
       },
@@ -261,7 +261,7 @@ export const dict = {
         straight: 'ストレート',
         straight_desc: '5枚以上の連続した数字',
         bomb: '爆弾 (Bomb)',
-        bomb_desc: '4枚の同数 또는 5枚以上のストレートフラッシュ. いつでも出せます!'
+        bomb_desc: '4枚の同数または5枚以上のストレートフラッシュ。いつでも出せます！'
       },
       special: {
         title: '特殊カード詳細',
@@ -272,7 +272,7 @@ export const dict = {
         phoenix: '鳳凰 (Phoenix)',
         phoenix_desc: 'ジョーカー。爆弾以外のどの数字にもなれます。',
         dog: '犬 (Dog)',
-        dog_desc: '自分のターンに使うと, 味方にターンを回します。'
+        dog_desc: '自分のターンに使うと、味方にターンを回します。'
       }
     },
     score: {
@@ -282,9 +282,9 @@ export const dict = {
       card_points: 'カード別の点数',
       special_bonus: '特殊ボーナス',
       one_two: 'ワンツー (1-2位独占)',
-      one_two_desc: '同じチームが1位と2位を独占した場合, 点数計算なしで即座に200点獲得。',
-      tichu_bonus: '스몰 / 그랜드티츄',
-      tichu_bonus_desc: '成功: +100 / +200点。失敗: 同等の減점.',
+      one_two_desc: '同じチームが1位と2位を독점した場合、点数計算なしで即座に200点獲得。',
+      tichu_bonus: 'スモール / グランドティチュ',
+      tichu_bonus_desc: '成功：+100 / +200点。失敗：同等の減点。',
       calculator: 'クイック計算機',
       team_a: '自チーム',
       team_b: '相手チーム',
@@ -292,20 +292,20 @@ export const dict = {
     },
     tips: {
       title: 'マナー＆チップ',
-      hero_title: '티츄는 신사적인 게임입니다',
+      hero_title: 'ティチュは紳士的なゲームです',
       hero_desc: '他のプレイヤーへの配慮がゲームをより楽しくします。',
       etiquette: '進行マナー',
       etiquette_items: [
-        { title: '카드 교환의 매너', desc: '전원이 카드를 엎을 때까지 기다린 후, 동시에 확인합니다.' },
-        { title: '지연 방지', desc: '자신의 차례가 오기 전에 낼 카드를 생각하여 원활한 진행을 돕습니다.' },
-        { title: '커뮤니케이션', desc: '손패에 관한 직접적인 정보 공유는 금지되어 있습니다.' }
+        { title: 'カード交換のマナー', desc: '全員がカードを伏せるまで待ってから、同時に確認します。' },
+        { title: '遅延の防止', desc: '自分の番が来る前に出すカードを考えておき、スムーズな進行を助けます.' },
+        { title: 'コミュニケーション', desc: '手札に関する直接的な情報の共有は禁止されています。' }
       ],
-      dos_donts: 'Do\'s & Don\'ts',
+      dos_donts: "Do's & Don'ts",
       dos_donts_items: [
-        { type: 'do', title: '맛의 티츄를 응원', desc: '味方がティチュを宣言したら, 自分が上がるより味方の1位を助けるプレイをしましょう。' },
-        { type: 'dont', title: '너무 늦은 티츄 선언', desc: '既にカードが出された後にティチュを宣言するのはマナー違反입니다.' }
+        { type: 'do', title: '味方のティチュを応援', desc: '味方がティチュを宣言したら、自分が上がるより味方の1位を助けるプレイをしましょう。' },
+        { type: 'dont', title: '遅すぎるティチュ宣言', desc: '既にカードが出された後にティチュ를 宣言するのはマナー違反です。' }
       ],
-      footer_quote: '「勝敗よりも大切なのは, 楽しいゲームを作る態度です」'
+      footer_quote: '「勝敗よりも大切なのは、楽しいゲームを作る態度です」'
     }
   },
   zh: {
@@ -346,7 +346,7 @@ export const dict = {
         title: '卡牌构成',
         normal: '普通牌 (52张)',
         normal_desc: '4种花色，每种从2到A各13张',
-        special: '特殊牌 (4장)',
+        special: '特殊牌 (4张)',
         special_desc: '雀(1), 凤, 狗, 龙'
       },
       hands: {
@@ -356,15 +356,15 @@ export const dict = {
         pair: '对子',
         pair_desc: '2张数字相同的牌',
         consecutive_pair: '连对',
-        consecutive_pair_desc: '2个 or 更多连续数字的对子',
+        consecutive_pair_desc: '2个或更多连续数字的对子',
         triple: '三张',
         triple_desc: '3张数字相同的牌',
         full_house: '葫芦',
         full_house_desc: '三张 + 对子',
         straight: '顺子',
-        straight_desc: '5张 or 更多连续数字的牌',
+        straight_desc: '5张或更多连续数字的牌',
         bomb: '炸弹 (Bomb)',
-        bomb_desc: '4张同号 or 5张以上同花顺. 可以在任何时候打出!'
+        bomb_desc: '4张同号或5张以上同花顺。可以在任何时候打出！'
       },
       special: {
         title: '特殊牌详情',
@@ -403,10 +403,10 @@ export const dict = {
         { title: '避免不必要的延迟', desc: '在轮到自己之前先想好要出的牌，以确保游戏流畅。' },
         { title: '沟通', desc: '严禁直接通过对话分享手牌信息。' }
       ],
-      dos_donts: 'Do\'s & Don\'ts',
+      dos_donts: "Do's & Don'ts",
       dos_donts_items: [
         { type: 'do', title: '支持队友的提储', desc: '如果队友喊了提储，应协助其获得第一，而不是自己争第一。' },
-        { type: 'dont', title: '过晚喊提储', desc: '在已经有人出牌后才喊提储是不符合礼仪의。' }
+        { type: 'dont', title: '过晚喊提储', desc: '在已经有人出牌后才喊提储是不符合礼仪的。' }
       ],
       footer_quote: '“比起胜负，更重要的是创造愉快游戏氛围的态度。”'
     }

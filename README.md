@@ -1,69 +1,75 @@
-# Tichu Guide R1
+# Tichu Guide
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An open-source project for the Tichu board game guide site. It aims to provide rules and information optimized for the mobile environment without advertisements.
+An open-source project for the Tichu board game guide site. It provides comprehensive rules and information optimized for mobile devices with a clean and simple interface.
 
 ---
 
 ## 🌟 Introduction
 
-While Tichu rulebooks are easily found on the internet, this project was started to address the lack of a well-made (Korean) guide site that allows users to check game methods and rules cleanly on a mobile (phone) screen without ads.
+This project addresses the need for a modern, accessible, and multi-language guide for the Tichu board game. It offers a distraction-free experience for players to check rules, combinations, and scoring anytime, anywhere.
 
-- **Purpose:** Provide an open-source guide for all Tichu players to easily and quickly refer to rules on mobile
-- **Goal:** No ads, mobile-first UI, clear information delivery
+- **Purpose:** A mobile-first, open-source guide for Tichu players globally.
+- **Goal:** Clean UI, clear information, and zero distractions.
 
 ---
 
 ## 🚀 Key Features
 
-- **Tichu Game Preparation:** Guide on card composition and initial setting
-- **Rule Description:** Detailed game rules and hand descriptions
-- **Score Calculation Guide:** Score calculation methods and practical tips
-- **Etiquette Help:** Precautions and manner tips during gameplay
-- **Mobile Optimization:** Mobile-first UI design for comfortable viewing anywhere
+- **Multi-language Support:** Full support for English, Korean, Japanese, and Chinese (Simplified).
+- **Language Persistence:** Automatically detects and remembers your preferred language via URL and local storage.
+- **Tichu Game Preparation:** Comprehensive guide on card composition and initial setup.
+- **Detailed Rules:** Interactive guide for hands (combinations), special cards, and declarations.
+- **Score Calculator:** Quick calculator for round-by-round point tracking.
+- **Etiquette & Tips:** Essential manners and strategic advice for a better gaming experience.
+- **Mobile Optimized:** Responsive design specifically tailored for mobile browsers.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Frontend:** Solid JS + Vite
-- **Deployment:** GitHub Pages (CI/CD: GitHub Actions)
-- **Styling:** Tailwind CSS v4
-- **Package Manager:** pnpm
+- **Frontend:** [Solid JS](https://www.solidjs.com/) + [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons:** [Lucide Solid](https://lucide.dev/)
+- **Internationalization:** Custom i18n system using Solid JS `createContext`
+- **Package Manager:** [pnpm](https://pnpm.io/)
+- **CI/CD:** GitHub Actions (Automated testing and deployment)
+- **Versioning:** [release-please](https://github.com/googleapis/release-please)
 
 ---
 
 ## 🌐 Deployment
 
-When changes from the `main` branch are PRed and merged into the `release` branch, it is automatically deployed to GitHub Pages via GitHub Actions.
+The site is automatically deployed to GitHub Pages when changes are merged into the `release` branch.
+Visit the live site: [https://naturalkei.github.io/tichu-guide-r1/](https://naturalkei.github.io/tichu-guide-r1/)
 
 ---
 
 ## 🤝 Contribution Guide
 
-This project is open-source, and anyone can contribute.
+Contributions are welcome! Please follow these guidelines:
 
 ### Branch Strategy
-- All tasks are performed in individual feature branches.
-- After task completion, create a Pull Request to the `main` branch for merging.
-- Delete feature branches immediately after they are merged.
+- Every task must be performed in a new feature branch (e.g., `feat/`, `fix/`, `docs/`).
+- After completion and verification, merge the branch into `main`.
+- Feature branches should be deleted immediately after they are merged.
 
 ### Commit Message Rules
-Please write according to the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-- `feat:` Addition of a new feature
-- `fix:` Bug fix
-- `docs:` Documentation modification (README.md, etc.)
-- `style:` Code style change (formatting, semicolons, etc.)
-- `refactor:` Code refactoring
-- `chore:` Build tasks, package manager configuration changes, etc.
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+- `feat:` New features
+- `fix:` Bug fixes
+- `docs:` Documentation updates
+- `style:` Formatting, missing semicolons, etc.
+- `refactor:` Code changes that neither fix a bug nor add a feature
+- `chore:` Updating build tasks, package manager configs, etc.
 
 ---
 
 ## 📜 License & Disclaimer
 
 ### License
-This project is distributed under the **MIT License**. Free modification and distribution are allowed.
+This project is licensed under the **MIT License**. You are free to modify and distribute it.
 
 ### Disclaimer
-This project is not an official guide for the Tichu game; it is an unofficial open-source project created by fans. All game rules and copyrights belong to the respective original authors.
+This is an unofficial fan-made project. All game rules, trademarks, and copyrights belong to their respective original authors and publishers.
