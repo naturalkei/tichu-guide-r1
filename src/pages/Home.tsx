@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 import { A } from "@solidjs/router";
 import { For } from 'solid-js';
 import Layout from '../components/Layout';
-import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-react';
+import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid';
 
 const Home: Component = () => {
   const menuItems = [
