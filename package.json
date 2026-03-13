@@ -1,11 +1,7 @@
 {
   "name": "tichu-guide-r1",
   "private": true,
-<<<<<<< release-please--branches--main--components--tichu-guide-r1
-  "version": "0.3.0",
-=======
   "version": "0.2.5",
->>>>>>> main
   "type": "module",
   "scripts": {
     "dev": "vite",
