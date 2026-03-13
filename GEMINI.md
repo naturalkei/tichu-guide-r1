@@ -13,8 +13,11 @@
 - **한국어 지원:** 모든 가이드 내용은 정확하고 친절한 한국어로 작성되어야 합니다.
 
 ### 2. 기술 스택 및 환경
-- **SPA (Single Page Application):** `tichu-board-r1` 프로젝트의 설정을 참고하여 SPA 환경을 구축합니다. (React/Vite 또는 유사한 최신 스택 선호)
+- **Package Manager:** `pnpm`을 기본 패키지 매니저로 사용합니다.
+- **SPA (Single Page Application):** `tichu-board-r1` 프로젝트의 설정을 참고하여 SPA 환경을 구축합니다. (Solid JS, Vite, Tailwind CSS v4)
+- **Linting & Formatting:** ESLint 9 (Flat Config) 및 Prettier를 사용하여 코드 품질을 관리합니다.
 - **GitHub Pages 배포:** `main` 브랜치를 `release` 브랜치로 PR 보낼 때 GitHub Actions를 통해 GitHub Pages에 자동 배포되는 CI/CD 워크플로우를 구축합니다.
+- **Release Automation:** `release-please` 워크플로우를 통해 버전 관리 및 CHANGELOG 생성을 자동화합니다.
 
 ### 3. 개발 워크플로우
 - **브랜치 전략:** 모든 개별 작업 및 지시사항은 독립적인 피처 브랜치(feature branches)에서 수행하며, 작업 완료 후 `main` 브랜치에 병합(Merge)합니다.
