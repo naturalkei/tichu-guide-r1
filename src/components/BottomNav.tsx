@@ -1,7 +1,7 @@
-import { A } from "@solidjs/router";
-import { For } from 'solid-js';
-import type { Component } from 'solid-js';
-import { Home, BookOpen, Calculator, Award } from 'lucide-solid';
+import { A } from '@solidjs/router'
+import { For } from 'solid-js'
+import type { Component } from 'solid-js'
+import { Home, BookOpen, Calculator, Award } from 'lucide-solid'
 
 const BottomNav: Component = () => {
   const navItems = [
@@ -9,7 +9,7 @@ const BottomNav: Component = () => {
     { label: '규칙', icon: BookOpen, path: '/rules' },
     { label: '점수', icon: Calculator, path: '/score' },
     { label: '팁', icon: Award, path: '/tips' },
-  ];
+  ]
 
   return (
     <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 pb-safe shadow-lg">
@@ -30,7 +30,7 @@ const BottomNav: Component = () => {
         </For>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default BottomNav;
+export default BottomNav

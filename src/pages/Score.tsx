@@ -1,10 +1,10 @@
-import { createSignal, For } from 'solid-js';
-import type { Component } from 'solid-js';
-import Layout from '../components/Layout';
+import { createSignal, For } from 'solid-js'
+import type { Component } from 'solid-js'
+import Layout from '../components/Layout'
 
 const Score: Component = () => {
-  const [teamAScore, setTeamAScore] = createSignal(0);
-  const [teamBScore, setTeamBScore] = createSignal(0);
+  const [teamAScore, setTeamAScore] = createSignal(0)
+  const [teamBScore, setTeamBScore] = createSignal(0)
 
   const cardScores = [
     { card: '5', points: '+5점' },
@@ -12,7 +12,7 @@ const Score: Component = () => {
     { card: 'K', points: '+10점' },
     { card: '용 (Dragon)', points: '+25점' },
     { card: '봉 (Mah Jong)', points: '-25점' },
-  ];
+  ]
 
   return (
     <Layout>
@@ -90,7 +90,7 @@ const Score: Component = () => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Score;
+export default Score

@@ -1,18 +1,18 @@
-import { For } from 'solid-js';
-import type { Component } from 'solid-js';
-import Layout from '../components/Layout';
+import { For } from 'solid-js'
+import type { Component } from 'solid-js'
+import Layout from '../components/Layout'
 
 const Tips: Component = () => {
   const etiquettes = [
     { title: '카드 교환 매너', desc: '모든 플레이어가 카드를 엎어놓을 때까지 기다린 후 동시에 확인합니다.' },
     { title: '불필요한 딜레이 방지', desc: '자신의 차례가 오기 전에 미리 낼 카드를 생각하여 원활한 진행을 돕습니다.' },
     { title: '팀원과의 소통', desc: '게임 중 직접적인 대화로 정보를 공유하는 것은 금지되어 있습니다.' },
-  ];
+  ]
 
   const dosAndDonts = [
     { type: 'do', title: '팀원의 티츄 응원하기', desc: '팀원이 티츄를 불렀다면, 자신이 1등을 하기보다 팀원의 1등을 돕는 플레이를 하세요.' },
     { type: 'dont', title: '늦은 티츄 선언', desc: '이미 카드가 나간 뒤에 티츄를 선언하는 것은 에티켓에 어긋납니다.' },
-  ];
+  ]
 
   return (
     <Layout>
@@ -74,7 +74,7 @@ const Tips: Component = () => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Tips;
+export default Tips

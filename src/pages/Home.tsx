@@ -1,8 +1,8 @@
-import type { Component } from 'solid-js';
-import { A } from "@solidjs/router";
-import { For } from 'solid-js';
-import Layout from '../components/Layout';
-import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid';
+import type { Component } from 'solid-js'
+import { A } from '@solidjs/router'
+import { For } from 'solid-js'
+import Layout from '../components/Layout'
+import { BookOpen, Calculator, Award, PlayCircle } from 'lucide-solid'
 
 const Home: Component = () => {
   const menuItems = [
@@ -10,7 +10,7 @@ const Home: Component = () => {
     { title: '상세 규칙', desc: '족보 및 진행 방식', icon: BookOpen, path: '/rules', color: 'bg-emerald-500' },
     { title: '점수 계산', desc: '계산기 및 보너스', icon: Calculator, path: '/score', color: 'bg-amber-500' },
     { title: '매너 팁', desc: '에티켓 가이드', icon: Award, path: '/tips', color: 'bg-purple-500' },
-  ];
+  ]
 
   return (
     <Layout>
@@ -57,7 +57,7 @@ const Home: Component = () => {
         </footer>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

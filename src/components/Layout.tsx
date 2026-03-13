@@ -1,5 +1,5 @@
-import type { ParentComponent } from 'solid-js';
-import BottomNav from './BottomNav';
+import type { ParentComponent } from 'solid-js'
+import BottomNav from './BottomNav'
 
 const Layout: ParentComponent = (props) => {
   return (
@@ -15,7 +15,7 @@ const Layout: ParentComponent = (props) => {
 
       <BottomNav />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

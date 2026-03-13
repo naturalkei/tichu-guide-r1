@@ -1,16 +1,16 @@
-import { createSignal, For } from 'solid-js';
-import type { Component } from 'solid-js';
-import Layout from '../components/Layout';
+import { createSignal, For } from 'solid-js'
+import type { Component } from 'solid-js'
+import Layout from '../components/Layout'
 
 const Rules: Component = () => {
-  const [activeTab, setActiveTab] = createSignal('setup');
+  const [activeTab, setActiveTab] = createSignal('setup')
 
   const tabs = [
     { id: 'setup', label: '준비' },
     { id: 'cards', label: '카드' },
     { id: 'hands', label: '족보' },
     { id: 'special', label: '특수' },
-  ];
+  ]
 
   const handsData = [
     { name: '싱글', desc: '카드 1장' },
@@ -19,7 +19,7 @@ const Rules: Component = () => {
     { name: '트리플', desc: '숫자가 같은 카드 3장' },
     { name: '풀하우스', desc: '트리플 + 페어' },
     { name: '스트레이트', desc: '5장 이상의 연속된 숫자' },
-  ];
+  ]
 
   return (
     <Layout>
@@ -134,7 +134,7 @@ const Rules: Component = () => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Rules;
+export default Rules

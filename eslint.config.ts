@@ -1,13 +1,13 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import solid from "eslint-plugin-solid";
+import js from '@eslint/js'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
+import solid from 'eslint-plugin-solid'
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ['dist', 'node_modules'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -17,6 +17,8 @@ export default tseslint.config(
     },
     rules: {
       ...solid.configs.recommended.rules,
+      'semi': ['error', 'never'],
+      'quotes': ['error', 'single'],
     },
   }
-);
+)
