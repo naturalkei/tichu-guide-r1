@@ -1,102 +1,43 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import type { Component } from 'solid-js';
+import Layout from './components/Layout';
 
-function App() {
-  const [count, setCount] = createSignal(0)
-
+const App: Component = () => {
   return (
-    <>
-      <section id="center">
-        <div class="hero">
-          <img src={heroImg} class="base" width="170" height="179" alt="" />
-          <img src={solidLogo} class="framework" alt="Solid logo" />
-          <img src={viteLogo} class="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+    <Layout>
+      <div class="space-y-6">
+        <section class="bg-indigo-600 rounded-2xl p-6 text-white shadow-xl shadow-indigo-200 dark:shadow-none">
+          <h2 class="text-2xl font-bold mb-2">티츄 가이드 R1</h2>
+          <p class="text-indigo-100 opacity-90 leading-relaxed">
+            광고 없이 깔끔하게 확인하는 <br />
+            티츄 보드게임의 모든 규칙
           </p>
-        </div>
-        <button class="counter" onClick={() => setCount((count) => count + 1)}>
-          Count is {count()}
-        </button>
-      </section>
+        </section>
 
-      <div class="ticks"></div>
+        <section class="grid grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-zinc-800 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm">
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100">게임 준비</h3>
+            <p class="text-sm text-zinc-500 mt-1">카드 구성 및 분배</p>
+          </div>
+          <div class="bg-white dark:bg-zinc-800 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm">
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100">상세 규칙</h3>
+            <p class="text-sm text-zinc-500 mt-1">족보 및 진행 방식</p>
+          </div>
+          <div class="bg-white dark:bg-zinc-800 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm">
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100">점수 계산</h3>
+            <p class="text-sm text-zinc-500 mt-1">계산기 및 보너스</p>
+          </div>
+          <div class="bg-white dark:bg-zinc-800 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm">
+            <h3 class="font-bold text-zinc-900 dark:text-zinc-100">매너 팁</h3>
+            <p class="text-sm text-zinc-500 mt-1">에티켓 가이드</p>
+          </div>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img class="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://solidjs.com/" target="_blank">
-                <img class="button-icon" src={solidLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <footer class="text-center text-xs text-zinc-400 mt-8 pb-4">
+          <p>© 2026 Tichu Guide R1. 팬 제작 오픈소스 프로젝트</p>
+        </footer>
+      </div>
+    </Layout>
+  );
+};
 
-      <div class="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
-
-export default App
+export default App;
