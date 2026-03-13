@@ -28,7 +28,7 @@ jobs:
           # If it's not in the event, try searching for the PR associated with this run's head_sha
           if [ -z "$pr_number" ]; then
             head_sha=${{ github.event.workflow_run.head_sha }}
-            pr_number=$(gh pr list --status open --json number,mergeCommit --jq ".[] | select(.mergeCommit.oid == \"$head_sha\" or .headRefOid == \"$head_sha\") | .number" | head -n 1)
+            pr_number=$(gh pr list --state open --json number,mergeCommit,headRefOid --jq ".[] | select(.mergeCommit.oid == \"$head_sha\" or .headRefOid == \"$head_sha\") | .number" | head -n 1)
           fi
 
           if [ -z "$pr_number" ]; then
