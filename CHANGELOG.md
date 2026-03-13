@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< release-please--branches--main--components--tichu-guide-r1
 ## [0.3.0](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.5...tichu-guide-r1-v0.3.0) (2026-03-13)
 
 
@@ -7,6 +8,8 @@
 
 * make application title a clickable link to home ([358ff30](https://github.com/naturalkei/tichu-guide-r1/commit/358ff30122e00e25d7db7ec1d49bde957aadaafe))
 
+=======
+>>>>>>> main
 ## [0.2.5](https://github.com/naturalkei/tichu-guide-r1/compare/tichu-guide-r1-v0.2.4...tichu-guide-r1-v0.2.5) (2026-03-13)
 
 
