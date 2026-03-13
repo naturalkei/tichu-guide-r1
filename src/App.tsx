@@ -1,4 +1,4 @@
-import { Router, Route, useNavigate, useLocation } from '@solidjs/router'
+import { Router, Route, useNavigate } from '@solidjs/router'
 import { onMount, type Component } from 'solid-js'
 import { I18nProvider, useI18n } from './contexts/I18nContext'
 import Home from './pages/Home'
@@ -6,37 +6,32 @@ import Rules from './pages/Rules'
 import Score from './pages/Score'
 import Tips from './pages/Tips'
 
-const AppContent: Component = () => {
+const RootRedirect: Component = () => {
   const { locale } = useI18n()
   const navigate = useNavigate()
-  const location = useLocation()
-
-  // Redirect root or invalid language paths
+  
   onMount(() => {
-    const path = location.pathname
-    if (path === '/' || path === '') {
-      navigate(`/${locale()}`, { replace: true })
-    }
+    navigate(`/${locale()}`, { replace: true })
   })
-
-  return (
-    <Route path="/:lang">
-      <Route path="/" component={Home} />
-      <Route path="/rules" component={Rules} />
-      <Route path="/score" component={Score} />
-      <Route path="/tips" component={Tips} />
-    </Route>
-  )
+  
+  return null
 }
 
 const App: Component = () => {
-  // Extract base from import.meta.env.BASE_URL (e.g., "/tichu-guide-r1/")
   const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
   return (
     <I18nProvider>
       <Router base={base}>
-        <AppContent />
+        <Route path="/:lang">
+          <Route path="/" component={Home} />
+          <Route path="/rules" component={Rules} />
+          <Route path="/score" component={Score} />
+          <Route path="/tips" component={Tips} />
+        </Route>
+        <Route path="/" component={RootRedirect} />
+        {/* Fallback for any other path */}
+        <Route path="*param" component={RootRedirect} />
       </Router>
     </I18nProvider>
   )
